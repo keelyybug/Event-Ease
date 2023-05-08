@@ -1,2 +1,2 @@
-DROP DATABASE IF EXISTS ;
-CREATE DATABASE ;
+-- DROP DATABASE IF EXISTS eventmanager_db;
+-- CREATE DATABASE eventmanager_db;
