@@ -40,6 +40,6 @@ app.get('/', (req, res) => {
 
 sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () =>
-    console.log('Good to go!')
+    console.log(`Listening to http://localhost:${PORT}`)
   );
 });
