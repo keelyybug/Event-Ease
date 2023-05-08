@@ -2,3 +2,51 @@
     font-family: 'Raleway', sans-serif; 
 }
 
+body {
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.39), rgba(0, 0, 0, 0.39)), url(../images/photo-1516450360452-9312f5e86fc7.avif);
+    background-blend-mode:darken;
+    background-size: cover;
+}
+
+nav {
+background-color: #050F38;
+}
+
+.navbar-nav li a{
+    color: white;
+}
+
+#homepage {
+    color: aliceblue;
+    max-width: 800px;
+    margin: 0 auto;
+    padding-top: 10%;
+    font-weight: 600;
+}
+
+.start {
+    font-weight: 400;
+    background-color: #050F38;
+    border-color: #050F38;
+    margin-inline: 40%!important;
+    box-shadow: 50%!important;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.start:hover {
+    color: #050F38;
+    background-color: #4cc9f0;
+    border-color: #4cc9f0;
+}
+
+.nav-link:hover {
+    color: #4cc9f0;
+}
+
+.icons {
+    color: white;
+}
+
+
+
