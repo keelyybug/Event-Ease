@@ -3,7 +3,7 @@ const sequelize = require('../config/config');
 
 class Rsvp extends Model {}
 
-  Rsvp.init(
+Rsvp.init(
   {
     id: {
       type: DataTypes.INTEGER,
