@@ -72,40 +72,6 @@ app.get('/single-event', (req, res) => {
   res.render('single-event', { title: 'Single Event' });
 });
 
-//! Creates fake JSON database with faker
-const { faker } = require('@faker-js/faker');
-const fs = require('fs');
-
-function generateUsers() {
-
-  let users = []
-
-  for (let id=1; id <= 100; id++) {
-    let username = faker.internet.userName();
-    let email = faker.internet.email();
-    let password = faker.internet.password();
-    let firstName = faker.name.firstName();
-    let lastName = faker.name.lastName();
-    let birthday = faker.date.birthdate()
-
-    users.push({
-        "id": id,
-        "username": username,
-        "email": email,
-        "password": password,
-        "first_name": firstName,
-        "last_name": lastName,
-        "birthday": birthday
-    });
-  }
-
-  return { "data": users }
-}
-
-let dataObj = generateUsers();
-
-fs.writeFileSync('data.json', JSON.stringify(dataObj, null, '\t'));
-
 //!Creates fake information with faker
 // const { faker } = require('@faker-js/faker');
 

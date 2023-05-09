@@ -35,7 +35,7 @@ nav {
     text-decoration: none;
     padding: 5px 20px;
     margin-right: 10px;
-    background-image: linear-gradient(270deg, #f72585 0%, #4cc9f0 100%);
+    background-image: linear-gradient(270deg, var(--hotpink) 0%, var(--turquiose) 100%);
     background-repeat: no-repeat;
     background-size: 100% 0.1em;
     background-position: bottom;
@@ -52,8 +52,8 @@ nav {
 
 .start {
     font-weight: 400;
-    background-color: #f72585;
-    border-color: #f72585;
+    background-color: var(--hotpink);
+    border-color: var(--hotpink);
     margin-inline: 40% !important;
     box-shadow: 50% !important;
     padding-top: 10px;
@@ -62,8 +62,8 @@ nav {
 
 .start:hover {
     color: #050F38;
-    background-color: #4cc9f0;
-    border-color: #4cc9f0;
+    background-color: var(--turquiose);
+    border-color: var(--turquiose);
 }
 
 .nav-link:hover {
@@ -77,6 +77,10 @@ nav {
     color: white;
 }
 
+.eventicons {
+    margin-top: 8%;
+}
+
 .homepgtitle {
     font-family: 'Bruno Ace SC', cursive;
     font-weight: 900;
@@ -86,6 +90,7 @@ nav {
 .card {
     background-color: #01030856
 }
+
 .wrapper{
     font-family: 'Bruno Ace SC', cursive;
     display:flex;
@@ -139,3 +144,18 @@ nav {
         margin: 0 -35px 0 35px;
     }
 }
+
+
+.boxtitle {
+    color: aliceblue;
+}
+
+.img {
+    border: 5px solid rgba(255, 255, 255, 0.582);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(255, 255, 255, 0.582);
+   margin: 0 auto;
+}
+
