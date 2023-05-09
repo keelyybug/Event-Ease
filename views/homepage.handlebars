@@ -25,7 +25,7 @@
                 </div>
             </nav>
         </header>
-        <section class="card d-flex flex-column text-center mt-5 mb-5" id="homepage">
+        <section class="card  text-center mt-5 mb-5 hidden" id="homepage">
             <h1 class="cardbody homepgtitle">EVENT EASE</h1>
             <h2 class="lh-base fs-4">Plan Smarter Not Harder! 
                 <br>
@@ -37,7 +37,7 @@
             <button type="button" class="btn start btn-primary mt-3 mb-5">Lets Do it!</button>
         </section>
 {{!-- ! CATEGORIES --}}
-        <div class="container eventicons">
+        <div class="container eventicons hidden">
             <div class="row">
               <div class="col-sm-3">
                 <div class="box text-center">
@@ -66,7 +66,8 @@
             </div>
           </div>
       {{!-- !FEATURED EVENTS --}}
-<div id="featuredEvents" class="featured carousel carousel-dark slide mt-5 mb-5">
+
+<div id="featuredEvents" class="featured hidden carousel carousel-dark slide mt-5 mb-5">
         <div class="carousel-indicators">
             <button type="button" data-bs-target="#featuredEvents" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
             <button type="button" data-bs-target="#featuredEvents" data-bs-slide-to="1" aria-label="Slide 2"></button>
@@ -92,6 +93,7 @@
             <div class="carousel-caption d-none d-md-block">
                 <h6>Coders Job Fair</h6>
                 <p>On June 27th UCF will be hosting a coding job fair! be there or be SQUARE!</p>
+
             </div>
         </div>
   </div>
@@ -105,7 +107,8 @@
         </button>
 </div>
 {{!-- !ABOUT US --}}
-<div class="container-fluid about">
+
+<div class="container-fluid about hidden">
 <div class="row">
     <figure class="figure col ml-2 mr-2">
         <img src="../images/Screenshot 2023-04-18 at 10.37.47 AM.png" class="figure-img img-fluid rounded mx-auto pt-3">
@@ -123,18 +126,20 @@
         
     </figure>
     <figure class="figure col">
-        <img src="" class="figure-img img-fluid rounded mx-auto pt-3">
-    <div class="text-center">
-        <h7>YOUR NAME</h7>
-    </div>
-        <ul class="text-center">
+    <div class="col">
+        <img src="../images/profile.jpg" class="figure-img img-fluid rounded mx-auto pt-3">
+        <div class="text-center">
+        <h5>YOUR NAME</h5>
+         <ul class="text-center">
             <li>
-                <a href="">GitHub</a>
+                <a href="https://github.com/Ashleyg5">GitHub</a>
             </li>
             <li>
-                <a href="mailto:">Email</a>
+                <a href="mailto:ashleygiraldo5@hotmail.com">Email</a>
             </li>
         </ul>
+    </div>
+
     </figure>
     <figure class="figure col">
         <img src="" class="figure-img img-fluid rounded mx-auto pt-3">
