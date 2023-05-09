@@ -22,16 +22,11 @@ const PORT = process.env.PORT || 3001;
 
 // app.use(session(sess));
 
-const hbs = exphbs.create({
-  defaultLayout: 'main',
-  layoutsDir: path.join(__dirname, 'views/main-layout'),
-  partialsDir: path.join(__dirname, 'views/pieces'),
-  extname: '.ease'
-});
+const hbs = exphbs.create({defaultLayout: 'main'});
 
 // Configure Express Handlebars
-app.engine('.ease', hbs.engine);
-app.set('view engine', '.ease');
+app.engine('handlebars', hbs.engine);
+app.set('view engine', 'handlebars');
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -39,7 +34,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // Homepage
 app.get('/', (req, res) => {
-  res.render('homepage', { title: 'Homepage'});
+  res.render('homepage', { title: 'Homepage' });
 });
 
 //Dashboard Page
