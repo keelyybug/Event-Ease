@@ -36,13 +36,20 @@ User.init(
         len: [8],
       },
     },
-    phone_number:{
-        type: DataTypes.INTEGER,
-        allowNull: false,
-        validate:{
-            len: [10],
-            isNumeric: true,
-        },
+    firstName: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    lastName: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    birthdate: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        isDate: true,
+      },
     }
   },
   {
