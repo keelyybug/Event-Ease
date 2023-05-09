@@ -1,4 +1,4 @@
-
+const sequelize = require('../config/config')
 const { Event, Rsvp, User } = require('../models');
 
 const eventData = require('./eventData.json');
