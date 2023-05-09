@@ -28,9 +28,15 @@
         <section class="card d-flex flex-column text-center mt-5 mb-5" id="homepage">
             <h1 class="cardbody homepgtitle">EVENT EASE</h1>
             <h4>Plan Smarter Not Harder! 
-            Want an easy way to send out invites to your event? Dont want to deal with annoying groupchats? We've been there and we have got you covered!</h4>
-            <button type="button" class="btn start btn-primary m-5">Lets Do it!</button>
+                <br>
+            Want an easy way to send out invites to your event? 
+                <br>
+            Dont want to deal with annoying groupchats? 
+                <br>
+            We've been there and we have got you covered!</h4>
+            <button type="button" class="btn start btn-primary mt-3 mb-5">Lets Do it!</button>
         </section>
+{{!-- ! CATEGORIES --}}
         <div class="container eventicons">
             <div class="row">
               <div class="col-sm-3">
@@ -59,10 +65,91 @@
               </div>
             </div>
           </div>
-          
+      {{!-- !FEATURED EVENTS --}}
+<div id="carousel" class="featured carousel carousel-dark slide">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+  <div class="carousel-inner">
+        <div class="carousel-item active" data-bs-interval="10000">
+          <img src="../Assets/drive in.jpeg" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+                <h4>Friday the 13th Drive in Movie</h4>
+                <p>Join us for a viewing of Friday the 13th on Friday the 13th! Drive up, pay $20 a car and dont forget to BEWARE!</p>
+            </div>
+        </div>
+        <div class="carousel-item" data-bs-interval="2000">
+          <img src="../Assets/you pick.jpeg" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+                <h4>Mothers Day U-Pick Festival</h4>
+                <p>Come spend a unique and fun day celebrating your mom with us! $10 for a basket!</p>
+            </div>
+        </div>
+        <div class="carousel-item">
+          <img src="../Assets/download.png" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+                <h4>Coders Job Fair</h4>
+                <p>On June 27th UCF will be hosting a coding job fair! be there or be SQUARE!</p>
+            </div>
+        </div>
+  </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+</div>
+{{!-- !ABOUT US --}}
+<div class="container-fluid">
+<div class="row">
+    <div class="col">
+        <img src="../images/Screenshot 2023-04-18 at 10.37.47 AM.png" class="about">
+        <h5>Keely Sherman</h5>
+        <ul>
+            <li>
+                <a href="https://github.com/keelyybug">GitHub</a>
+            </li>
+            <li>
+                <a href="mailto:keelysherman00@gmail.com">Email</a>
+            </li>
+        </ul>
+    </div>
+    <div class="col">
+        <img src="" class="about">
+        <h5>YOUR NAME</h5>
+        <ul>
+            <li>
+                <a href="">GitHub</a>
+            </li>
+            <li>
+                <a href="mailto:">Email</a>
+            </li>
+        </ul>
+    </div>
+    <div class="col">
+        <img src="" class="about">
+        <h5>YOUR NAME</h5>
+        <ul>
+            <li>
+                <a href="">GitHub</a>
+            </li>
+            <li>
+                <a href="mailto:">Email</a>
+            </li>
+        </ul>
+    </div>
+</div>
+</div>
 
-
-    </main>{{!-- <div class="wrapper">
+    </main>
+    
+    
+    {{!-- <div class="wrapper">
                 <span class="first-text">EVENT </span>
                 <ul class="sec-texts">
                 <li><span>HELPER</span></li>
