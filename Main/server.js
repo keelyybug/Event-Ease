@@ -73,33 +73,38 @@ app.get('/single-event', (req, res) => {
 });
 
 //! Creates fake JSON database with faker
-// const { faker } = require('@faker-js/faker');
-// const fs = require('fs');
+const { faker } = require('@faker-js/faker');
+const fs = require('fs');
 
-// function generateUsers() {
+function generateUsers() {
 
-//   let users = []
+  let users = []
 
-//   for (let id=1; id <= 100; id++) {
+  for (let id=1; id <= 100; id++) {
+    let username = faker.internet.userName();
+    let email = faker.internet.email();
+    let password = faker.internet.password();
+    let firstName = faker.name.firstName();
+    let lastName = faker.name.lastName();
+    let birthday = faker.date.birthdate()
 
-//     let firstName = faker.name.firstName();
-//     let lastName = faker.name.lastName();
-//     let email = faker.internet.email();
+    users.push({
+        "id": id,
+        "username": username,
+        "email": email,
+        "password": password,
+        "first_name": firstName,
+        "last_name": lastName,
+        "birthday": birthday
+    });
+  }
 
-//     users.push({
-//         "id": id,
-//         "first_name": firstName,
-//         "last_name": lastName,
-//         "email": email
-//     });
-//   }
+  return { "data": users }
+}
 
-//   return { "data": users }
-// }
+let dataObj = generateUsers();
 
-// let dataObj = generateUsers();
-
-// fs.writeFileSync('data.json', JSON.stringify(dataObj, null, '\t'));
+fs.writeFileSync('data.json', JSON.stringify(dataObj, null, '\t'));
 
 //!Creates fake information with faker
 // const { faker } = require('@faker-js/faker');
