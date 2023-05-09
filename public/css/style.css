@@ -1,6 +1,4 @@
 * {
-    /* font-family: 'Raleway', sans-serif; */
-    /* font-family: 'Bruno Ace SC', cursive; */
     font-family: 'Bebas Neue', cursive;
 }
 
@@ -84,13 +82,13 @@ nav {
 .homepgtitle {
     font-family: 'Bruno Ace SC', cursive;
     font-weight: 900;
-    font-size: xxx-large;
+    font-size: 60px;
 }
 
 .card {
     background-color: #01030856
 }
-
+/* TODO fix TYPEWRITER */
 .wrapper{
     font-family: 'Bruno Ace SC', cursive;
     display:flex;
@@ -144,7 +142,7 @@ nav {
         margin: 0 -35px 0 35px;
     }
 }
-
+/* TODO end of typewriter */
 
 .boxtitle {
     color: aliceblue;
@@ -157,6 +155,96 @@ nav {
     flex-direction: column;
     background-color: rgba(255, 255, 255, 0.582);
    margin: 0 auto;
+}
+/* !CAROUSEL */
+/* Change the height of the carousel */
+.carousel {
+    height: 500px;
+    margin: 400px 0 400px;
+  }
+  
+  /* Change the color of the carousel controls */
+  .carousel-control-prev, .carousel-control-next {
+    background-color: var(--hotpink);
+  }
+  
+  /* Change the color of the carousel indicators */
+  .carousel-indicators li {
+    background-color: var(--turquiose);
+  }
+  
+  /* Change the size of the carousel indicators */
+  .carousel-indicators li {
+    width: 10px;
+    height: 10px;
+    margin: 0 5px;
+  }
+  
+  /* Change the font size of the carousel captions */
+h4 {
+    font-size: 40px;
+    color: #050F38;
+  }
+h5 {
+    font-size: 40px;
+    color: #050F38;
+  }
+h6 {
+    font-size: 40px;
+    color: #050F38;
+}
+  
+  /* Change the color of the carousel captions */
+  .carousel-caption {
+    color: var(--pastelblue);
+  }
+  
+  .carousel-item img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+
+  .carousel-item {
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 400px; /* set the desired height */
+  }
+ 
+
+  /* !ABOUT */
+
+  .about {
+    margin: 400px 0 75px;
+  }
+  .figure-img{
+    justify-self: center;
+  }
+  .figure{
+    background-color: black;
+    border-radius: 20px;
+    border-color: #050F38;
+    justify-content: center;
+  }
+  h7{
+    color: white;
+    font-size: 30px;
+  }
+  li{
+    list-style: none;
+  }
+  .figure:hover {
+    color: #050F38;
+    background-color: var(--mediumPB);
+    border-color: var(--turquiose);
+}
+
+li a{
+    color: white;
 }
 
 section.card, 
@@ -181,3 +269,4 @@ div.about {
     filter: blur(0);
     transform: translateX(0);
 }
+
