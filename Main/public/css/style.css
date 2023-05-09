@@ -1,35 +1,45 @@
 * {
-    font-family: 'Raleway', sans-serif; 
+    font-family: 'Raleway', sans-serif;
 }
 
 body {
     background: linear-gradient(0deg, rgba(0, 0, 0, 0.39), rgba(0, 0, 0, 0.39)), url(../images/photo-1516450360452-9312f5e86fc7.avif);
-    background-blend-mode:darken;
+    background-blend-mode: darken;
     background-size: cover;
 }
 
 nav {
-background-color: #050F38;
+    background-color: #050F38;
 }
 
-.navbar-nav li a{
+
+.navbar-nav li a {
     color: white;
+    display: flex;
+    text-decoration: none;
+    padding: 5px 20px;
+    margin-right: 10px;
+    background-image: linear-gradient(270deg, #f72585 0%, #4cc9f0 100%);
+    background-repeat: no-repeat;
+    background-size: 100% 0.1em;
+    background-position: bottom;
+    transition: all 0.25s ease-in;
 }
 
 #homepage {
     color: aliceblue;
     max-width: 800px;
     margin: 0 auto;
-    padding-top: 10%;
+    padding-top: 4%;
     font-weight: 600;
 }
 
 .start {
     font-weight: 400;
-    background-color: #050F38;
-    border-color: #050F38;
-    margin-inline: 40%!important;
-    box-shadow: 50%!important;
+    background-color: #f72585;
+    border-color: #f72585;
+    margin-inline: 40% !important;
+    box-shadow: 50% !important;
     padding-top: 10px;
     padding-bottom: 10px;
 }
@@ -41,7 +51,10 @@ background-color: #050F38;
 }
 
 .nav-link:hover {
-    color: #4cc9f0;
+    color: #050F38;
+    background-size: 100% 100%;
+    font-weight: 600;
+    cursor: pointer;
 }
 
 .icons {
@@ -50,11 +63,9 @@ background-color: #050F38;
 
 .homepgtitle {
     font-weight: 900;
+    font-size: xxx-large;
 }
 
 .card {
     background-color: #01030856
 }
-
-
-
