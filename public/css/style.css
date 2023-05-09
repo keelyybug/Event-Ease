@@ -159,7 +159,8 @@ nav {
 /* !CAROUSEL */
 /* Change the height of the carousel */
 .carousel {
-    height: 400px;
+    height: 500px;
+    margin: 400px 0 400px;
   }
   
   /* Change the color of the carousel controls */
@@ -213,3 +214,34 @@ h6 {
     height: 400px; /* set the desired height */
   }
  
+
+  /* !ABOUT */
+
+  .about {
+    margin: 400px 0 75px;
+  }
+  .figure-img{
+    justify-self: center;
+  }
+  .figure{
+    background-color: black;
+    border-radius: 20px;
+    border-color: #050F38;
+    justify-content: center;
+  }
+  h7{
+    color: white;
+    font-size: 30px;
+  }
+  li{
+    list-style: none;
+  }
+  .figure:hover {
+    color: #050F38;
+    background-color: var(--mediumPB);
+    border-color: var(--turquiose);
+}
+
+li a{
+    color: white;
+}
