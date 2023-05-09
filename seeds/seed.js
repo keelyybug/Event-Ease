@@ -14,16 +14,16 @@ const seedAll = async () => {
     returning: true,
   });
 
-  for (const event of eventData) {
+  for (const event of eventData.data) {
     await Event.create({
       ...event,
-      user_id: users[Math.floor(Math.random() * users.length)].id,
+      user_id: users[Math.floor(Math.random() * users.length)],
     });
 
-  for (const rsvp of rsvpData) {
+  for (const rsvp of rsvpData.data) {
     await Rsvp.create({
       ...rsvp,
-      user_id: users[Math.floor(Math.random() * users.length)].id,
+      user_id: users[Math.floor(Math.random() * users.length)],
     });
   }
 }
