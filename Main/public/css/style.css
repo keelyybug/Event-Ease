@@ -7,10 +7,11 @@ body {
     background-blend-mode: darken;
     background-size: cover;
 }
-:root{
+
+:root {
     --hotpink: #F72585;
     --purplepink: #B5179E;
-    --lighterpurple: #7209B7; 
+    --lighterpurple: #7209B7;
     --purple: #560BAD;
     --darkpurple: #480CA8;
     --violet: #3A0CA3;
@@ -20,8 +21,9 @@ body {
     --turquiose: #4CC9F0;
     --pastelblue: #C8DFFA;
     --pastelpurple: #C5C3EF;
-    --pastelpink: #F8C9F1; 
+    --pastelpink: #F8C9F1;
 }
+
 nav {
     background-color: #050F38;
 }
@@ -98,5 +100,5 @@ nav {
     display: flex;
     flex-direction: column;
     background-color: rgba(255, 255, 255, 0.582);
-   margin: 0 auto;
+    margin: 0 auto;
 }
