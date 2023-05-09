@@ -1,5 +1,7 @@
 * {
-    font-family: 'Raleway', sans-serif;
+    /* font-family: 'Raleway', sans-serif; */
+    /* font-family: 'Bruno Ace SC', cursive; */
+    font-family: 'Bebas Neue', cursive;
 }
 
 body {
@@ -76,10 +78,64 @@ nav {
 }
 
 .homepgtitle {
+    font-family: 'Bruno Ace SC', cursive;
     font-weight: 900;
     font-size: xxx-large;
 }
 
 .card {
     background-color: #01030856
+}
+.wrapper{
+    font-family: 'Bruno Ace SC', cursive;
+    display:flex;
+}
+.wrapper .first-title{
+    font-size: 60px;
+    color: white;
+}
+.wrapper .sec-text{
+    height: 90px;
+    line-height: 90px;
+    overflow:hidden;
+}
+.sec-text li{
+    position: relative;
+    top: 0;
+    font-size: 60px;
+    color: var(--hotpink);
+    list-style: none;
+    padding: 0 20px;
+    text-shadow: 0 0 10px --hotpink;
+    animation: slide 12s steps(4, end) infinite;
+}
+
+@keyframes slide {
+    100% {
+        top: -360px;
+    }
+}
+
+
+.sec-texts li span{
+    position:relative;
+}
+.sec-texts li span .title{
+    color: white;
+}
+.sec-texts li span::before{
+    overflow: hidden;
+    content: ' ';
+    position: absolute;
+    left: 0;
+    width: 400px;
+    height: 90px;
+    border-left: 2px solid --hotpink;
+    animation: typing 1.5s steps(6) infinite alternate;
+}
+@keyframes typing {
+    100% {
+        left: 100%;
+        margin: 0 -35px 0 35px;
+    }
 }
