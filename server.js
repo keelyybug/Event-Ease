@@ -82,34 +82,6 @@ app.get('/dashboard', (req, res) => {
   res.render('dashboard', { title: 'Dashboard' });
 });
 
-//!Creates fake information with faker
-// const { faker } = require('@faker-js/faker');
-
-// let firstName = faker.name.firstName();
-// let lastName = faker.name.lastName();
-
-// let jobTitle = faker.name.jobTitle();
-// let prefix = faker.name.prefix(); 
-// let suffix = faker.name.suffix();
-// let jobArea = faker.name.jobArea();
-
-// let phone = faker.phone.number();
-
-// console.log(`Employee: ${prefix} ${firstName} ${lastName} ${suffix}`);
-// console.log(`Job title: ${jobTitle}`);
-// console.log(`Job area: ${jobArea}`);
-// console.log(`Phone: ${phone}`);
-
-// let futureDate = faker.date.future();
-// let recentDate = faker.date.recent();
-// let weekday = faker.date.weekday();
-
-// console.log(futureDate);
-// console.log(recentDate);
-// console.log(weekday);
-
-//app.use(routes);
-
 sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () =>
     console.log(`Listening to http://localhost:${PORT}`)
