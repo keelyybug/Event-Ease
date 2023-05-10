@@ -1,0 +1,25 @@
+<div class="card">
+    <h3 class="card-header">Edit My Event</h3>
+    <form class="card-body edit-post-form">
+        <label for="post-title" class="form-label">Title</label>
+        <input name="post-title" type="text" value="{{event.event_title}}" class="form-input" />
+        <label class="form-label" for="post-content">Description</label>
+        <input name="post-content" type="text" value="{{event.event_content}}" class="form-input" />
+        <label for="event-date" class="form-label">Event Date:</label>
+        <input name="event-date" type="text" value="{{event.event_date}}" class="form-input"/>
+        <div class="container">
+            <div class="row">
+                <button type="submit" class="btn col">Update Event</button>
+        {{!-- ! fix button below to be a redirect--}}
+                <button type="button" class="btn col">
+                    <a href="../views/">Return</a>
+                </button> 
+                <button type="button" class="delete-post-btn btn col">Delete Event</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+
+<script src="../js/edit-event.js"></script>
+<script src="../js/delete-event.js"></script>
