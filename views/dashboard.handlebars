@@ -1,15 +1,7 @@
-{{#if event.length}}
-<section>
-  <h2>Your Posts</h2>
-    {{#each event as |event|}}
-      {{> dashboard-info event}}
+<article class="post">
+
+    {{#each events as |event| }}
+        {{> event-info event}}
     {{/each}}
 
-</section>
-{{/if}}
-
-<button type="submit" class="btn"><a class="link" href="/dashboard/new">+ New Event</a></button>
-
-<script src="../js/add-event.js"></script>
-
-{{!-- if issues check s on event --}}
+</article>

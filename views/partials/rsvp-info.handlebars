@@ -1,4 +1,4 @@
-<div class="comments">
+<div class="rsvp">
   {{#each this}}
     <div class="card">
         <h3 class="card-header"></h3>
@@ -7,7 +7,7 @@
                 {{rsvp_message}}
             </div>
             <div class="meta">
-                -{{user.username}}, {{format_date event_date}}
+                -{{user.username}}, {{format_date date_created}}
             </div>
         </section>
     </div>
