@@ -37,7 +37,6 @@ Rsvp.init(
   },
   {
     sequelize,
-    timestamps: false,//? maybe
     freezeTableName: true,
     underscored: true,
     modelName: 'rsvp',

@@ -1,6 +1,6 @@
-const Event = require('./event');
-const Rsvp = require('./rsvp');
-const User = require('./user');
+const Event = require('./Event');
+const Rsvp = require('./Rsvp');
+const User = require('./User');
 
 User.hasMany(Event, {
   foreignKey: 'user_id',
