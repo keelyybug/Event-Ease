@@ -269,3 +269,10 @@ div.about {
     transform: translateX(0);
 }
 
+
+.figure-img {
+    width: 350px;
+    height: 400px;
+}
+/*//! media query for image sizes need to be done */
+
