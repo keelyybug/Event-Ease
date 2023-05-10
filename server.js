@@ -6,7 +6,6 @@ const session = require('express-session');
 
 const sequelize = require('./config/config');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
-
 const app = express();
 const PORT = process.env.PORT || 3001;
 
@@ -38,29 +37,9 @@ app.get('/', (req, res) => {
   res.render('homepage', { title: 'Homepage' });
 });
 
-//Dashboard Page
-app.get('/dashboard', (req, res) => {
-  res.render('dashboard', { title: 'Dashboard' });
-});
-
-// Edit Event Page
-app.get('/edit-event', (req, res) => {
-  res.render('edit-event', { title: 'Edit Event' });
-});
-
-// Featured Page
-app.get('/featured', (req, res) => {
-  res.render('featured', { title: 'Featured' });
-});
-
 // Login Page
 app.get('/login', (req, res) => {
   res.render('login', { title: 'Login' });
-});
-
-// New Event Page
-app.get('/new-event', (req, res) => {
-  res.render('new-event', { title: 'New Event' });
 });
 
 // Signup Page
@@ -68,11 +47,40 @@ app.get('/signup', (req, res) => {
   res.render('signup', { title: 'Signup' });
 });
 
+// Profile
+app.get('/profile', (req, res) => {
+  res.render('profile', { title: 'profile' });
+});
+
+// New Event Page
+app.get('/new-event', (req, res) => {
+  res.render('new-event', { title: 'New Event' });
+});
+
 // Single Event Page
 app.get('/single-event', (req, res) => {
   res.render('single-event', { title: 'Single Event' });
 });
 
+// Edit Event Page
+app.get('/edit-event', (req, res) => {
+  res.render('edit-event', { title: 'Edit Event' });
+});
+
+// Comments page
+app.get('/comments', (req, res) => {
+  res.render('comments', { title: 'Comments' });
+});
+
+// Signup Page
+app.get('/rsvp', (req, res) => {
+  res.render('rsvp', { title: 'Rsvp' });
+});
+
+//Dashboard
+app.get('/dashboard', (req, res) => {
+  res.render('dashboard', { title: 'Dashboard' });
+});
 
 //!Creates fake information with faker
 // const { faker } = require('@faker-js/faker');
