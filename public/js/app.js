@@ -17,3 +17,8 @@ hiddenEl.forEach((el) => observer.observe(el));
 // myCarousel.addEventListener('slide.bs.carousel', event => {
 //   // do something...
 // })
+
+window.addEventListener('load', (event) => {
+  event.preventDefault();
+  new cursoreffects.followingDotCursor({ color: ['#F72585'] });
+});
