@@ -9,7 +9,6 @@ const loginFormHandler = async (event) => {
 
   if (email && password) {
     // Send a POST request to the API endpoint
-    //! Will need to double check this endpoint
     const response = await fetch('/api/users/login', {
       method: 'POST',
       body: JSON.stringify({ email, password }),
@@ -18,7 +17,7 @@ const loginFormHandler = async (event) => {
 
     if (response.ok) {
       // If successful, redirect the browser to the dashboard page
-      document.location.replace('/dashboard');
+      document.location.replace('/profile');
     } else {
       alert(response.statusText);
     }
@@ -32,19 +31,21 @@ const signupFormHandler = async (event) => {
   const username = document.querySelector('#username-signup').value.trim();
   const email = document.querySelector('#email-signup').value.trim();
   const password = document.querySelector('#password-signup').value.trim();
-  const phoneNumber = document.querySelector('#phoneNum-signup').value.trim();
+  const firstName = document.querySelector('#firstName-signup').value.trim();
+  const lastName = document.querySelector('#lastName-signup').value.trim();
+  const birthdate = document.querySelector('#birthdate-signup').value.trim();
   
   //Send post request to API endpoint
-  if (username && email && password && phoneNumber) {
+  if (username && email && password && firstName && lastName && birthdate) {
     const response = await fetch('/api/users', {
       method: 'POST',
-      body: JSON.stringify({ username, email, password, phoneNumber }),
+      body: JSON.stringify({ username, email, password, firstName, lastName, birthdate }),
       headers: { 'Content-Type': 'application/json' },
     });
 
     // If signup successful, redirect to dashboard page
     if (response.ok) {
-      document.location.replace('/dashboard');
+      document.location.replace('/profile');
     } else {
       alert(response.statusText);
     }
