@@ -160,9 +160,7 @@ nav {
 /* Change the height of the carousel */
 .carousel {
     height: 500px;
-    margin: 400px 0 400px;
   }
-  
   /* Change the color of the carousel controls */
   .carousel-control-prev, .carousel-control-next {
     background-color: var(--hotpink);
@@ -183,12 +181,13 @@ nav {
   /* Change the font size of the carousel captions */
 h4 {
     font-size: 40px;
-    color: #050F38;
+    color: var(--pastelblue);
   }
 h5 {
     font-size: 40px;
-    color: #050F38;
+    color: var(--turquiose);
   }
+
 h6 {
     font-size: 40px;
     color: #050F38;
