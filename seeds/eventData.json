@@ -1,5 +1,4 @@
-{
-	"data": [
+[
 		{
 			"event_title": "Friday the 13th Drive in Movie",
 			"event_description": "Join us for a viewing of Friday the 13th on Friday the 13th! Drive up, pay $20 a car and dont forget to BEWARE!",
@@ -36,4 +35,3 @@
 			"event_date": "2023-12-05"
 		}
 	]
-}

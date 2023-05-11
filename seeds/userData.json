@@ -1,164 +1,162 @@
-{
-	"data": [
+[
 		{
 			"username": "Dayne39",
 			"email": "Roslyn74@hotmail.com",
 			"password": "ottkiceTeWFDMty",
-			"first_name": "Westley",
-			"last_name": "Hickle",
-			"birthday": "1947-05-14"
+			"first": "Westley",
+			"last": "Hickle",
+			"birthdate": "1947-05-14"
 		},
 		{
 			"username": "Aron.Stroman36",
 			"email": "Mable94@hotmail.com",
 			"password": "l4lm9P3ajfFlMzv",
-			"first_name": "Kylie",
-			"last_name": "Becker",
-			"birthday": "1999-06-22"
+			"first": "Kylie",
+			"last": "Becker",
+			"birthdate": "1999-06-22"
 		},
 		{
 			"username": "Asha_Bahringer",
 			"email": "Cleora.Gutkowski@yahoo.com",
 			"password": "hjGr22RP_dEitYj",
-			"first_name": "Columbus",
-			"last_name": "Cummerata",
-			"birthday": "1949-12-25"
+			"first": "Columbus",
+			"last": "Cummerata",
+			"birthdate": "1949-12-25"
 		},
 		{
 			"username": "Bonnie_Pfannerstill",
 			"email": "Hillary24@gmail.com",
 			"password": "0gWQhsuaFRamZ1x",
-			"first_name": "Linnea",
-			"last_name": "Hegmann",
-			"birthday": "1990-04-22"
+			"first": "Linnea",
+			"last": "Hegmann",
+			"birthdate": "1990-04-22"
 		},
 		{
 			"username": "Kirk.DAmore95",
 			"email": "Elbert34@gmail.com",
 			"password": "6ptSOBA9cvP4vp0",
-			"first_name": "Gayle",
-			"last_name": "Davis",
-			"birthday": "1964-05-08"
+			"first": "Gayle",
+			"last": "Davis",
+			"birthdate": "1964-05-08"
 		},
 		{
 			"username": "Dakota_Bosco27",
 			"email": "Noah0@hotmail.com",
 			"password": "9PHKNFi0Pg5O8wa",
-			"first_name": "Keaton",
-			"last_name": "Stracke",
-			"birthday": "1991-10-21"
+			"first": "Keaton",
+			"last": "Stracke",
+			"birthdate": "1991-10-21"
 		},
 		{
 			"username": "Davin_Feest41",
 			"email": "Ryleigh34@hotmail.com",
 			"password": "WlD0XnFCdgRpm67",
-			"first_name": "Abdiel",
-			"last_name": "Mitchell",
-			"birthday": "1957-06-06"
+			"first": "Abdiel",
+			"last": "Mitchell",
+			"birthdate": "1957-06-06"
 		},
 		{
 			"username": "Mathew.Cruickshank",
 			"email": "May_OConnell80@hotmail.com",
 			"password": "_3ju0dotxaPCz63",
-			"first_name": "Salma",
-			"last_name": "Stehr",
-			"birthday": "2002-06-29"
+			"first": "Salma",
+			"last": "Stehr",
+			"birthdate": "2002-06-29"
 		},
 		{
 			"username": "Clair51",
 			"email": "Kurtis_McDermott57@yahoo.com",
 			"password": "jKPh5SLwLBo62M8",
-			"first_name": "Ryder",
-			"last_name": "Schneider",
-			"birthday": "1967-09-22"
+			"first": "Ryder",
+			"last": "Schneider",
+			"birthdate": "1967-09-22"
 		},
 		{
 			"username": "Winona_Roberts35",
 			"email": "Ruthe_Gottlieb@gmail.com",
 			"password": "1JBCvNpsXWl2EA_",
-			"first_name": "Abigayle",
-			"last_name": "Stoltenberg",
-			"birthday": "1950-12-18"
+			"first": "Abigayle",
+			"last": "Stoltenberg",
+			"birthdate": "1950-12-18"
 		},
 		{
 			"username": "Candace.Block",
 			"email": "Neal_Batz@hotmail.com",
 			"password": "nFR2NAdFWsfZYd_",
-			"first_name": "Korbin",
-			"last_name": "Rolfson",
-			"birthday": "1953-02-26"
+			"first": "Korbin",
+			"last": "Rolfson",
+			"birthdate": "1953-02-26"
 		},
 		{
 			"username": "Harley.Streich85",
 			"email": "Stan_Kihn@yahoo.com",
 			"password": "acL3a_Ae8mRqKsl",
-			"first_name": "Damaris",
-			"last_name": "Braun",
-			"birthday": "1995-12-09"
+			"first": "Damaris",
+			"last": "Braun",
+			"birthdate": "1995-12-09"
 		},
 		{
 			"username": "Sonny.Ferry",
 			"email": "Kaden_Kemmer@yahoo.com",
 			"password": "Y61aDnnqu5rugry",
-			"first_name": "Cierra",
-			"last_name": "Toy",
-			"birthday": "1983-11-16"
+			"first": "Cierra",
+			"last": "Toy",
+			"birthdate": "1983-11-16"
 		},
 		{
 			"username": "Stacy_Zieme",
 			"email": "Izabella.Smith30@hotmail.com",
 			"password": "h2aTLTiDidS2hp5",
-			"first_name": "Rosalinda",
-			"last_name": "Jones",
-			"birthday": "1979-02-16"
+			"first": "Rosalinda",
+			"last": "Jones",
+			"birthdate": "1979-02-16"
 		},
 		{
 			"username": "Carlee.Hessel",
 			"email": "Lorenzo77@gmail.com",
 			"password": "B8Oa0Pd5KUw7vIg",
-			"first_name": "Alexandra",
-			"last_name": "Hodkiewicz",
-			"birthday": "1945-02-03"
+			"first": "Alexandra",
+			"last": "Hodkiewicz",
+			"birthdate": "1945-02-03"
 		},
 		{
 			"username": "Ruth.Rippin18",
 			"email": "Taya.Adams5@gmail.com",
 			"password": "KDEsiCclG5VUBal",
-			"first_name": "America",
-			"last_name": "Kiehn",
-			"birthday": "1993-07-12"
+			"first": "America",
+			"last": "Kiehn",
+			"birthdate": "1993-07-12"
 		},
 		{
 			"username": "Dewayne63",
 			"email": "Federico_Beier@gmail.com",
 			"password": "ytQbwjtrVrMB8oj",
-			"first_name": "Juana",
-			"last_name": "Boyle",
-			"birthday": "1964-11-13"
+			"first": "Juana",
+			"last": "Boyle",
+			"birthdate": "1964-11-13"
 		},
 		{
 			"username": "Jaime9",
 			"email": "Raven64@hotmail.com",
 			"password": "5wqnVOEf_nCcn4K",
-			"first_name": "Mollie",
-			"last_name": "Kozey",
-			"birthday": "1970-02-28"
+			"first": "Mollie",
+			"last": "Kozey",
+			"birthdate": "1970-02-28"
 		},
 		{
 			"username": "Ashley46",
 			"email": "Benny.Reilly@hotmail.com",
 			"password": "lUWR24ZeS9ouvLI",
-			"first_name": "Ethelyn",
-			"last_name": "Gleason",
-			"birthday": "1994-01-08"
+			"first": "Ethelyn",
+			"last": "Gleason",
+			"birthdate": "1994-01-08"
 		},
 		{
 			"username": "Lukas.Breitenberg63",
 			"email": "Jess52@yahoo.com",
 			"password": "XpPJMUbnePCdKtY",
-			"first_name": "Rasheed",
-			"last_name": "Kub",
-			"birthday": "2002-10-07"
+			"first": "Rasheed",
+			"last": "Kub",
+			"birthdate": "2002-10-07"
 		}
 	]
-}
