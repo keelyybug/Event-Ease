@@ -28,18 +28,13 @@ router.get('/event/:id', async (req, res) => {
 
 
 //* Create event
-router.post('/event/:id', withAuth, async (req, res) => {
+router.post('/event', withAuth, async (req, res) => {
     try{
         const createEvent = await Event.create({
+            user_id: req.session.id,
             event_title: req.body.event_title,
             event_description: req.body.event_description,
             event_date: req.body.event_date
-        },
-        {
-            where: {
-                id: req.params.id,
-                user_id: req.session.user_id
-            },
         });
 
         res.status(200).json(createEvent);
