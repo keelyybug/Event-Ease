@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const { Rsvp, Event, User } = require('../../models');
 
+
 router.get('/', async (req, res) => {
   try {
    
@@ -37,6 +38,7 @@ router.get('/:id', async (req, res) => {
             {
                 model: User, 
                 attributes: ['id', 'username'],
+
             },
           {
             model: Event,
@@ -44,8 +46,7 @@ router.get('/:id', async (req, res) => {
           },
         ],
       });
-  
-     
+
       const rsvps = rsvpData.map((rsvp) => rsvp.get({ plain: true }));
   
   

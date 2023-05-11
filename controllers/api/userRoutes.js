@@ -2,21 +2,26 @@ const router = require('express').Router();
 const { User } = require('../../models');
 
 //* Create new user (sign up)
-router.post('/', async (req, res) => {
+router.post('/signup', async (req, res) => {
   try {
     const dbUserData = await User.create({
       username: req.body.username,
       email: req.body.email,
       password: req.body.password,
-      firstName: req.body.firstName,
-      lastName: req.body.lastName,
-      birthdate: req.body.birthdate
+      first: req.body.first,
+      last: req.body.last
+    });
+
+    const user = dbUserData.map((rsvp) => user.get({ plain: true }));
+
+    res.render('signup', { 
+      user, 
     });
 
     req.session.save(() => {
       req.session.loggedIn = true;
 
-      res.status(200).json(dbUserData);
+      res.status(200).json(user);
     });
   } catch (err) {
     console.log(err);

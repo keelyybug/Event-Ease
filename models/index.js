@@ -29,5 +29,4 @@ Rsvp.belongsTo(Event, {
   foreignKey: 'event_id'
 });
 
-
 module.exports = { Event, Rsvp, User };
