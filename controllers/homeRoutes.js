@@ -7,8 +7,7 @@ router.get('/', (req, res) => {
     res.render('homepage', { title: 'Homepage' });
   });
 
-
-// Login withAuth middleware && Profile
+// Profile Page
 router.get('/profile', withAuth, async (req, res) => {
   try {
     // Find the logged in user based on the session ID
@@ -46,62 +45,123 @@ router.get('/signup', (req, res) => {
 
 
 // New Event Page
-router.get('/new-event', (req, res) => {
-  res.render('new-event', { title: 'New Event' });
+router.get('/new-event', withAuth, async (req, res) => {
+  try {
+    // Find the logged in user based on the session ID
+    const userData = await User.findByPk(req.session.user_id, {
+      attributes: { exclude: ['password'] },
+      include: [{ model: Project }],
+    });
+
+    const user = userData.get({ plain: true });
+
+    res.render('new-event', {
+      ...user,
+      logged_in: true, title: 'New Event'
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
 });
   
-  router.post('/create', (req, res) => {
-      const newItem = req.body;
-  
-      res.redirect('/items');
-    });
+router.post('/create-new-event', (req, res) => {
+    const newEvent = req.body;
+
+    res.redirect('/profile');
+  });
   
   
   // Single Event Page
-  router.get('/single-event', (req, res) => {
-    res.render('single-event', { title: 'Single Event' });
-  });
+router.get('/single-event', withAuth, async (req, res) => {
+  try {
+    // Find the logged in user based on the session ID
+    const userData = await User.findByPk(req.session.user_id, {
+      attributes: { exclude: ['password'] },
+      include: [{ model: Project }],
+    });
+
+    const user = userData.get({ plain: true });
+
+    res.render('single-event', {
+      ...user,
+      logged_in: true, title: 'Single Event'
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
   
   
-  // Edit Event Page
-  router.get('/edit-event', (req, res) => {
-    res.render('edit-event', { title: 'Edit Event' });
-  });
-  
-  router.get('/edit/:id', (req, res) => {
-    const itemId = req.params.id;
-  
-    res.render('edit', { item });
-  });
-  
-  router.post('/update/:id', (req, res) => {
-    const itemId = req.params.id;
-    const updatedItem = req.body;
-  
-    res.redirect('/items');
-  });
-  
-  
-  // Delete event
-  router.delete('/items/:id', (req, res) => {
-    const itemId = req.params.id;
-  
-    res.sendStatus(200);
-  });
-  
-  
-// Comments page
-router.get('/comments', (req, res) => {
-  res.render('comments', { title: 'Comments' });
+// Edit Event Page
+router.get('/edit-event', withAuth, async (req, res) => {
+  try {
+    // Find the logged in user based on the session ID
+    const userData = await User.findByPk(req.session.user_id, {
+      attributes: { exclude: ['password'] },
+      include: [{ model: Project }],
+    });
+
+    const user = userData.get({ plain: true });
+
+    res.render('edit-event', {
+      ...user,
+      logged_in: true, title: 'Edit Event'
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
 });
 
-router.post('/comments', (req, res) => {
-  const { name } = req.body;
+// Edit individual event
+router.get('/edit/:id', (req, res) => {
+  const itemId = req.params.id;
+
+  res.render('edit', { item });
+});
+  
+router.post('/update/:id', (req, res) => {
+  const itemId = req.params.id;
+  const updatedItem = req.body;
+
+  res.redirect('/items');
+});
+
+// Delete individual event
+router.delete('/items/:id', (req, res) => {
+  const itemId = req.params.id;
 
   res.sendStatus(200);
 });
   
   
+// Comments page
+router.get('/comments', withAuth, async (req, res) => {
+  try {
+    // Find the logged in user based on the session ID
+    const userData = await User.findByPk(req.session.user_id, {
+      attributes: { exclude: ['password'] },
+      include: [{ model: Project }],
+    });
+
+  const user = userData.get({ plain: true });
+
+  res.render('comments', {
+      ...user,
+      logged_in: true, title: 'Comments'
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+// Post comments
+router.post('/create-new-comment', (req, res) => {
+  const newComment = req.body;
+
+  res.redirect('/comments');
+});
+
+
 // Rsvp Page
 router.get('/rsvp', (req, res) => {
   res.render('rsvp', { title: 'Rsvp' });
