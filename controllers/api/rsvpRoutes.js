@@ -1,24 +1,52 @@
 const router = require('express').Router();
-const { Rsvp } = require('../../models');
+const { Rsvp, Event, User } = require('../../models');
 
 router.get('/', async (req, res) => {
+  try {
+   
+    const rsvpData = await Rsvp.findAll({
+      include: [
+          {
+              model: User, 
+              attributes: ['id', 'username'],
+          },
+        {
+          model: Event,
+          attributes: ['id', 'event_title'],
+        },
+      ],
+    });
+
+   
+    const rsvps = rsvpData.map((rsvp) => rsvp.get({ plain: true }));
+
+
+    res.render('rsvp', { 
+      rsvps, 
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+router.get('/:id', async (req, res) => {
     try {
      
-      const rsvpData = await Rsvp.findAll({
+      const rsvpData = await Rsvp.findByPk(req.params.id, {
         include: [
             {
                 model: User, 
-                attributes: ['id'],
+                attributes: ['id', 'username'],
             },
           {
             model: Event,
-            attributes: ['id'],
+            attributes: ['id', 'event_title'],
           },
         ],
       });
   
      
-      const rsvps = rsvpData.map((rsvp) => project.get({ plain: true }));
+      const rsvps = rsvpData.map((rsvp) => rsvp.get({ plain: true }));
   
   
       res.render('rsvp', { 
@@ -29,12 +57,13 @@ router.get('/', async (req, res) => {
     }
   });
 
-  router.post('/:id', async (req, res) => {
+  
+  router.post('/:user_id/:event_id', async (req, res) => {
     try {
       const rsvpData = await Rsvp.create({
         ...req.body,
-        user_id: req.session.user_id,
-        event_id: req.session.event_id
+        user_id: req.params.user_id,
+        event_id: req.params.event_id
       });
   
       res.status(200).json(rsvpData);
@@ -48,8 +77,8 @@ router.get('/', async (req, res) => {
       const rsvpData = await Rsvp.destroy({
         where: {
           id: req.params.id,
-          user_id: req.session.user_id,
-          event_id: req.session.event_id,
+          user_id: req.params.user_id,
+          event_id: req.params.event_id,
         },
       });
   
