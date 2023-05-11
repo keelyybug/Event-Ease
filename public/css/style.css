@@ -106,61 +106,6 @@ nav {
 .card {
     background-color: #01030856
 }
-/* TODO fix TYPEWRITER */
-.wrapper{
-    font-family: 'Bruno Ace SC', cursive;
-    display:flex;
-}
-.wrapper .first-title{
-    font-size: 60px;
-    color: white;
-}
-.wrapper .sec-text{
-    height: 90px;
-    line-height: 90px;
-    overflow:hidden;
-}
-.sec-text li{
-    position: relative;
-    top: 0;
-    font-size: 60px;
-    color: var(--hotpink);
-    list-style: none;
-    padding: 0 20px;
-    text-shadow: 0 0 10px --hotpink;
-    animation: slide 12s steps(4, end) infinite;
-}
-
-@keyframes slide {
-    100% {
-        top: -360px;
-    }
-}
-
-
-.sec-texts li span{
-    position:relative;
-}
-.sec-texts li span .title{
-    color: white;
-}
-.sec-texts li span::before{
-    overflow: hidden;
-    content: ' ';
-    position: absolute;
-    left: 0;
-    width: 400px;
-    height: 90px;
-    border-left: 2px solid --hotpink;
-    animation: typing 1.5s steps(6) infinite alternate;
-}
-@keyframes typing {
-    100% {
-        left: 100%;
-        margin: 0 -35px 0 35px;
-    }
-}
-/* TODO end of typewriter */
 
 .boxtitle {
     color: aliceblue;
@@ -175,13 +120,19 @@ nav {
    margin: 0 auto;
 }
 /* !CAROUSEL */
+
+h4{
+    font-size: 40px;
+    font-family: 'Bruno Ace SC', cursive;
+    color:white;
+}
 /* Change the height of the carousel */
 .carousel {
     height: 500px;
   }
   /* Change the color of the carousel controls */
   .carousel-control-prev, .carousel-control-next {
-    background-color: var(--hotpink);
+    background-color: var(--purple);
   }
   
   /* Change the color of the carousel indicators */
@@ -197,24 +148,35 @@ nav {
   }
   
   /* Change the font size of the carousel captions */
-h4 {
+.carousel-caption h5 {
     font-size: 40px;
     color: var(--pastelblue);
+    -webkit-text-stroke: 1px var(--lighterpurple);
   }
-h5 {
-    font-size: 40px;
-    color: var(--turquiose);
+  .drive {
+    color: var(--pastelblue);
+    -webkit-text-stroke: .5px var(--lighterpurple);
   }
 
-h6 {
+  .carousel-caption h6 {
     font-size: 40px;
-    color: #050F38;
-}
-  
-  /* Change the color of the carousel captions */
-  .carousel-caption {
-    color: var(--pastelblue);
+    color: var(--turquiose);
+    -webkit-text-stroke: 1px #050F38;
   }
+.mom{
+    color: var(--turquiose);
+    -webkit-text-stroke: .5px #050F38;
+}
+  .carousel-caption h7 {
+    font-size: 40px;
+    color: var(--pastelpink);
+    -webkit-text-stroke: 1px var(--purplepink);
+}
+.fair{
+    color: var(--pastelpink);
+    -webkit-text-stroke: .5px var(--purplepink);
+}
+  /* Change the color of the carousel captions */
   
   .carousel-item img {
     object-fit: cover;
@@ -229,7 +191,7 @@ h6 {
     background-size: cover;
     background-position: center;
     width: 100%;
-    height: 400px; /* set the desired height */
+    height: 500px; /* set the desired height */
   }
  
 
@@ -247,7 +209,7 @@ h6 {
     border-color: #050F38;
     justify-content: center;
   }
-  h7{
+  h8 {
     color: white;
     font-size: 30px;
   }
@@ -266,6 +228,7 @@ li a{
 
 section.card, 
 div.eventicons, 
+div.feat,
 div.featured,
 div.about {
     display: grid;
@@ -293,4 +256,6 @@ div.about {
     height: 400px;
 }
 /*//! media query for image sizes need to be done */
+
+
 
