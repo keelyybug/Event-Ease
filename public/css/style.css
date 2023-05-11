@@ -1,5 +1,6 @@
 * {
     font-family: 'Bebas Neue', cursive;
+    cursor: none;
 }
 
 body {
@@ -80,7 +81,6 @@ nav {
     color: #050F38;
     background-size: 100% 100%;
     font-weight: 600;
-    cursor: pointer;
 }
 
 .icons {
