@@ -26,5 +26,9 @@ const loginFormHandler = async (event) => {
 
 // ! below are selecting from handlebars doc
 document
-  .querySelector('.login-form')
-  .addEventListener('submit', loginFormHandler);
+.querySelector('#login-form')
+.addEventListener('submit', loginFormHandler);
+
+document
+.querySelector('.signup-form')
+.addEventListener('submit', signupFormHandler);
