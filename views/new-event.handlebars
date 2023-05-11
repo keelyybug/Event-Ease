@@ -1,12 +1,12 @@
 <div class="card">
   <h3 class="card-header">Create New Event</h3>
-<form class="card-body edit-event-form">
+<form id="eventform" class="card-body edit-event-form">
         <label for="event-title" class="form-label">Title</label>
-        <input name="event-title" type="text" value="{{event.event_title}}" class="form-input" />
+        <input id="event-title" name="event-title" type="text" value="{{event.event_title}}" class="form-input" />
         <label class="form-label" for="event-description">Description</label>
-        <input name="event_description" type="text" value="{{event.event_description}}" class="form-input" />
+        <input id="event-description" name="event-description" type="text" value="{{event.event_description}}" class="form-input" />
         <label for="event-date" class="form-label">Event Date:</label>
-        <input name="event-date" type="text" value="{{event.event_date}}" class="form-input"/>
+        <input id="event-date" name="event-date" type="text" value="{{event.event_date}}" class="form-input"/>
 
     <button type="submit" class="btn">Create</button>
   </form>
