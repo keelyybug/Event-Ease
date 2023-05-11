@@ -1,6 +1,7 @@
+
 {{#if rsvps.length}}
 <section>
-  <h2>Your Posts</h2>
+  <h1><a class="link" href="/single-post/{{event.id}}">{{event_title}}'s Attendees</a></h1>
     {{#each rsvps as |rsvp|}}
       {{> rsvp-info rsvp}}
     {{/each}}
@@ -8,6 +9,6 @@
 </section>
 {{/if}}
 
-<button type="submit" class="btn"><a class="link" href="/dashboard/new">+ New RSVP</a></button>
+<button type="submit" class="btn"><a class="link" href="/rsvp">+ New RSVP</a></button>
 
 <script src="../js/rsvp.js"></script>

@@ -1,13 +1,23 @@
-{{#if posts.length}}
+<div class="row">
+  <div class="col-auto">
+    <h1>Welcome, {{first}}{{last}}!</h1>
+  </div>
+</div>
+<div class="container">
+{{#if events.length}}
 <section>
-  <h2>Your Posts</h2>
-    {{#each posts as |post|}}
-      {{> dashboard-postinfo post}}
+    <h3>My Events</h3>
+    {{#each events as |event|}}
+      {{> profile-info post}}
     {{/each}}
 
 </section>
+</div>
 {{/if}}
 
-<button type="submit" class="btn"><a class="link" href="/dashboard/new">+ New Post</a></button>
 
-<script src="/js/logout.js"></script>
+<button type="submit" class="btn"><a class="link" href="/new-event">+ New Event</a></button>
+
+
+
+<script src="./js/profile.js"></script>
