@@ -1,14 +1,14 @@
 const router = require('express').Router();
 const { Rsvp } = require('../../models');
 
-router.get('/', async (req, res) => {
+router.get('/:id', async (req, res) => {
     try {
-     
       const rsvpData = await Rsvp.findAll({
+        where: {id: req.params.id},
         include: [
             {
                 model: User, 
-                attributes: ['id'],
+                attributes: ['id','username'],
             },
           {
             model: Event,
@@ -17,8 +17,7 @@ router.get('/', async (req, res) => {
         ],
       });
   
-     
-      const rsvps = rsvpData.map((rsvp) => project.get({ plain: true }));
+      const rsvps = rsvpData.map((rsvp) => rsvp.get({ plain: true }));
   
   
       res.render('rsvp', { 
