@@ -22,6 +22,7 @@ body {
     --pastelpurple: #C5C3EF;
     --pastelpink: #F8C9F1; 
 }
+
 nav {
     background-color: #050F38;
 }
@@ -48,6 +49,7 @@ nav {
     font-weight: 600;
 }
 
+
 .start {
     font-weight: 400;
     background-color: var(--hotpink);
@@ -58,10 +60,20 @@ nav {
     padding-bottom: 10px;
 }
 
-.start:hover {
+.start:hover, .login-btn:hover {
     color: #050F38;
     background-color: var(--turquiose);
     border-color: var(--turquiose);
+}
+
+.login-btn {
+    font-weight: 400;
+    background-color: var(--hotpink);
+    border-color: var(--hotpink);
+    margin-inline: 40% !important;
+    box-shadow: 50% !important;
+    padding-top: 5px;
+    padding-bottom: 5px;
 }
 
 .nav-link:hover {
@@ -83,6 +95,12 @@ nav {
     font-family: 'Bruno Ace SC', cursive;
     font-weight: 900;
     font-size: 60px;
+}
+
+.login-title {
+    font-family: 'Bruno Ace SC', cursive;
+    font-weight: 900;
+    font-size: 35px;
 }
 
 .card {
