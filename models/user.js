@@ -43,13 +43,6 @@ User.init(
     last: {
       type: DataTypes.STRING,
       allowNull: false,
-    },
-    birthdate: {
-      type: DataTypes.STRING,
-      allowNull: false,
-      validate: {
-        isDate: true,
-      },
     }
   },
   {
