@@ -12,16 +12,10 @@ router.post('/signup', async (req, res) => {
       last: req.body.last
     });
 
-    const user = dbUserData.map((rsvp) => user.get({ plain: true }));
-
-    res.render('signup', { 
-      user, 
-    });
-
     req.session.save(() => {
       req.session.loggedIn = true;
 
-      res.status(200).json(user);
+      res.status(200).json(dbUserData);
     });
   } catch (err) {
     console.log(err);

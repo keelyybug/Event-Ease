@@ -10,15 +10,16 @@ const signupFormHandler = async (event) => {
     
     //Send post request to API endpoint
     if (username && email && password && first && last) {
-      const response = await fetch('/api/users', {
+      console.log(username, email, password, first, last);
+      const response = await fetch('/api/user/signup', {
         method: 'POST',
-        body: JSON.stringify({ username, email, password, first, last, birthdate }),
+        body: JSON.stringify({ username: username, email: email, password: password, first: first, last: last }),
         headers: { 'Content-Type': 'application/json' },
       });
   
       // If signup successful, redirect to dashboard page
       if (response.ok) {
-        document.location.replace('/profile');
+        document.location.replace('/login');
       } else {
         alert(response.statusText);
       }
@@ -26,5 +27,5 @@ const signupFormHandler = async (event) => {
   };
 
 document
-  .querySelector('#signup-form')
+  .querySelector('#signupform')
   .addEventListener('submit', signupFormHandler);
