@@ -1,3 +1,30 @@
+<header>
+            <nav class="navbar  navbar-expand-lg">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="./">
+                        <img src="../images/logo-no-background.png" alt="logo" width="55" height="45">
+                    </a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon lines"></span>
+                    </button>
+                    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link" href="/dashboard">Dashboard</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/profile/{{user.id}}">Profile</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/">log Out</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+</header>
+
 <article class="event">
     <h1>All Event's Dashboard</h1>
 <div class="container">
@@ -8,3 +35,4 @@
 </article>
 
 <script src="../js/dashboard.js"></script>
+<script src="/js/logout.js"></script>

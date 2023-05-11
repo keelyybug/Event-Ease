@@ -3,7 +3,7 @@
 }
 
 body {
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.39) 0%, rgba(0, 0, 0, 0.39) 0%, #000000 100%), url(../images/photo-1516450360452-9312f5e86fc7.avif) no-repeat center top fixed;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.39) 0%, rgba(0, 0, 0, 0.56) 75%, #000000 100%), url(../images/photo-1516450360452-9312f5e86fc7.avif) no-repeat center top fixed;
     background-blend-mode: darken;
     background-size: cover;
 }
@@ -121,7 +121,7 @@ nav {
 /* !CAROUSEL */
 
 h4{
-    font-size: 40px;
+    font-size: 80px;
     font-family: 'Bruno Ace SC', cursive;
     color:white;
 }
@@ -132,6 +132,7 @@ h4{
   /* Change the color of the carousel controls */
   .carousel-control-prev, .carousel-control-next {
     background-color: var(--purple);
+    width: 100px;
   }
   
   /* Change the color of the carousel indicators */
