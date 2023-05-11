@@ -1,12 +1,12 @@
 const router = require('express').Router();
 const userRoutes = require('./userRoutes');
-const profileRoutes = require('./eventRoutes');
+const profileRoutes = require('./profileRoutes');
 const rsvpRoutes = require('./rsvpRoutes');
 const dashboardRoutes = require('./dashboardRoutes');
 
 router.use('/user', userRoutes);
-router.use('/event', profileRoutes);
+router.use('/profile', profileRoutes);
 router.use('/rsvp', rsvpRoutes);
-router.use('/event', )
+router.use('/dashboard', dashboardRoutes)
 
 module.exports = router;

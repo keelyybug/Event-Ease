@@ -1,5 +1,5 @@
-// const carousel = new bootstrap.Carousel('#myCarousel');
 
+// const carousel = new bootstrap.Carousel('#myCarousel');
 
 const observer = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
@@ -15,7 +15,6 @@ const observer = new IntersectionObserver((entries) => {
 const hiddenEl = document.querySelectorAll('.hidden');
 hiddenEl.forEach((el) => observer.observe(el));
 // myCarousel.addEventListener('slide.bs.carousel', event => {
-//   // do something...
 // })
 
 window.addEventListener('load', (event) => {
