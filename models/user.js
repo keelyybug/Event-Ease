@@ -43,7 +43,7 @@ User.init(
     last: {
       type: DataTypes.STRING,
       allowNull: false,
-    },
+    }
   },
   {
     hooks: {

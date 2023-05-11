@@ -5,15 +5,14 @@ const signupFormHandler = async (event) => {
     const username = document.querySelector('#username-signup').value.trim();
     const email = document.querySelector('#email-signup').value.trim();
     const password = document.querySelector('#password-signup').value.trim();
-    const firstName = document.querySelector('#firstName-signup').value.trim();
-    const lastName = document.querySelector('#lastName-signup').value.trim();
-    const birthdate = document.querySelector('#birthdate-signup').value.trim();
+    const first = document.querySelector('#first-signup').value.trim();
+    const last = document.querySelector('#last-signup').value.trim();
     
     //Send post request to API endpoint
-    if (username && email && password && firstName && lastName && birthdate) {
+    if (username && email && password && first && last) {
       const response = await fetch('/api/users', {
         method: 'POST',
-        body: JSON.stringify({ username, email, password, firstName, lastName, birthdate }),
+        body: JSON.stringify({ username, email, password, first, last, birthdate }),
         headers: { 'Content-Type': 'application/json' },
       });
   
