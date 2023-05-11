@@ -32,7 +32,9 @@ The Event Planner is a web application built using MySQL, Node.js, and follows t
 To access the deployed Event Planner application on Heroku, follow these steps:
 
 1. Visit the application's Heroku URL in your web browser. The URL will be provided to you after the application is deployed.
+
 2. If necessary, create a user account or log in using your existing credentials.
+
 3. Start exploring the features of the Event Planner application, including creating events, managing RSVPs, and viewing event details.
 Note: Since the application is already deployed on Heroku, there is no need to clone the repository or install dependencies locally. Simply access the provided Heroku URL to use the application.
 
@@ -66,6 +68,7 @@ MVC Architecture
 Heroku
 NPM Packages 
 Bootstrap
+
 
 ## Credits
 
