@@ -1,3 +1,30 @@
+<header>
+            <nav class="navbar  navbar-expand-lg">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="./">
+                        <img src="../images/logo-no-background.png" alt="logo" width="55" height="45">
+                    </a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon lines"></span>
+                    </button>
+                    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link" href="/dashboard">Dashboard</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/profile/{{user.id}}">Profile</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/">log Out</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+</header>
+
 <div class="card">
     <h3 class="card-header">Edit My Event</h3>
     <form class="card-body edit-post-form">
@@ -9,12 +36,9 @@
         <input name="event-date" type="text" value="{{event.event_date}}" class="form-input"/>
         <div class="container">
             <div class="row">
-                <button type="submit" class="btn col">Update Event</button>
-        {{!-- ! fix button below to be a redirect--}}
-                <button type="button" class="btn col">
-                    <a href="./">Return</a>
-                </button> 
-                <button type="button" class="delete-post-btn btn col">Delete Event</button>
+                <button type="submit" class="btn start btn-primary mt-3 mb-5" onclick="window.location.href = '/user/{{user.id}}/profile'">Update</button>
+                <button type="submit" class="btn start btn-primary mt-3 mb-5" onclick="window.location.href = '/user/{{user.id}}/profile'">Return</button>
+                <button type="button" class="delete-post-btn btn col mt-3 mb-5">Delete Event</button>
             </div>
         </div>
     </form>
@@ -23,3 +47,4 @@
 
 <script src="../js/edit-event.js"></script>
 <script src="../js/delete-event.js"></script>
+<script src="/js/logout.js"></script>
