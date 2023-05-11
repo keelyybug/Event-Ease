@@ -1,0 +1,19 @@
+<div class="card">
+  <div class="row mb-2">
+    <div class="col-md-8">
+        <h4><a href="/profile/single-event/{{event.id}}">{{event.title}}</a></h4>
+    </div>
+      <div class="col-md-4">
+        <button class="btn btn-sm btn-danger" data-id="{{event.id}}">DELETE</button>
+        <button class="btn btn-sm" data-id="{{}}" type="button">
+          <a href="/rsvp">Attendees</a> 
+        </button> 
+        <button class="btn btn-sm" data-id="{{}}" type="button">
+          <a href="/edit">Edit</a> 
+        </button> 
+      </div>
+    </div>
+</div>
+
+{{!-- if error check button hrefs and add /profile/single-event/{{event.id}} infront --}}
+{{!-- also see if /profile/single-event/{{event.id}} is {{event.id}} or just {{id}} --}}

@@ -9,14 +9,14 @@ router.get('/event/:id', async (req, res) => {
         include: [
           {
             model: User,
-            attributes: ['name'],
+            attributes: ['username'],
           },
         ],
       });
   
       const event = eventData.get({ plain: true });
   
-      res.render('event', {
+      res.render('myevent', {
         ...event,
         logged_in: req.session.logged_in
       });
@@ -42,7 +42,7 @@ router.post('/event/:id', withAuth, async (req, res) => {
             },
         });
 
-        res.status(200).json(editEvent);
+        res.status(200).json(createEvent);
     } catch (err) {
         res.status(500).json(err);
     }
@@ -73,19 +73,19 @@ router.put('/event/:id', withAuth, async (req, res) => {
   //* Delete event
   router.delete('/:id', withAuth, async (req, res) => {
     try {
-      const projectData = await Project.destroy({
+      const eventData = await Event.destroy({
         where: {
           id: req.params.id,
           user_id: req.session.user_id,
         },
       });
   
-      if (!projectData) {
-        res.status(404).json({ message: 'No project found with this id!' });
+      if (!eventData) {
+        res.status(404).json({ message: 'No event found with this id!' });
         return;
       }
   
-      res.status(200).json(projectData);
+      res.status(200).json(eventData);
     } catch (err) {
       res.status(500).json(err);
     }
