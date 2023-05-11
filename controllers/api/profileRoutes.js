@@ -37,8 +37,14 @@ router.post('/event', withAuth, async (req, res) => {
             event_date: req.body.event_date
         });
 
+        req.session.save(() => {
+          req.session.user_id = createEvent.id;
+          req.session.loggedIn = true;
+
         res.status(200).json(createEvent);
+      })
     } catch (err) {
+      console.log(err);
         res.status(500).json(err);
     }
   });
