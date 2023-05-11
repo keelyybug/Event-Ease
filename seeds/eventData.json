@@ -1,43 +1,36 @@
 {
 	"data": [
 		{
-			"id": 1,
 			"event_title": "Friday the 13th Drive in Movie",
 			"event_description": "Join us for a viewing of Friday the 13th on Friday the 13th! Drive up, pay $20 a car and dont forget to BEWARE!",
 			"event_date": "2023-09-13"
 		},
 		{
-			"id": 2,
 			"event_title": "Mothers Day U-Pick Festival",
 			"event_description": "Come spend a unique and fun day celebrating your mom with us! $10 for a basket!",
 			"event_date": "2023-05-14"
 		},
 		{
-			"id": 3,
 			"event_title": "Coders Job Fair",
 			"event_description": "Hosted by UCF, there will be a coding job fair! Dont forget your printed resumes and brightest smiles!",
 			"event_date": "2024-01-14"
 		},
 		{
-			"id": 4,
 			"event_title": "Bike Week",
 			"event_description": "BIKERS, come far and come all to the Orlando Harley Davidson for a week of vendors, fun and over all good time!",
 			"event_date": "2023-07-27"
 		},
 		{
-			"id": 5,
 			"event_title": "Lee County Fair",
 			"event_description": "Couples, besties, families, or stag, anyway you come you will have fun! dont believe me yet? Fried Oreos, Rides, Petting Zoo, Fresh Lemonade.... Need I say more?",
 			"event_date": "2023-09-03"
 		},
 		{
-			"id": 6,
 			"event_title": "Anime Night at the Regal",
 			"event_description": "All afternoon/night we will be playing all of your favorite Studio Ghibli. Come by and re-experience the magical worlds on the big screen!",
 			"event_date": "2024-10-21"
 		},
 		{
-			"id": 7,
 			"event_title": "Bobbies designs at Mt Dora Art Walk",
 			"event_description": "I will be selling my glass art at downtown Mt.Dora's art walk! it occurs every first Sunday of the month! Come support me and all our local artists!",
 			"event_date": "2023-12-05"
