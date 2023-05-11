@@ -36,11 +36,11 @@ User.init(
         len: [8],
       },
     },
-    firstName: {
+    first: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    lastName: {
+    last: {
       type: DataTypes.STRING,
       allowNull: false,
     },
