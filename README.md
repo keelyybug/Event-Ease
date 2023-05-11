@@ -60,19 +60,14 @@ Event Deletion: Event organizers have the ability to delete their events, removi
 
 ## Technologies Used
 
-MySQL: The project utilizes MySQL as the database management system to store and retrieve event data and user information.
-
-Node.js: The application is built using Node.js, a JavaScript runtime, to handle the server-side logic and API endpoints.
-
-Express: Express.js is used as the web framework to handle routing and middleware functionality.
-
-Sequelize: Sequelize is an ORM (Object-Relational Mapping) tool that simplifies interacting with the MySQL database by providing a higher-level interface for database operations.
-
-EJS: EJS (Embedded JavaScript) is used as the templating engine to render dynamic HTML views based on the data fetched from the server.
-
-MVC Architecture: The project follows the MVC architectural pattern, separating the application into models, views, and controllers to promote maintainability and code organization.
-
-Heroku: The application can be easily deployed to Heroku, allowing for easy access and scalability.
+MySQL
+Node.js
+Express
+Sequelize
+MVC Architecture
+Heroku
+NPM Packages 
+Bootstrap
 
 
 ## Credits
