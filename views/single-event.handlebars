@@ -14,7 +14,7 @@
                                 <a class="nav-link" href="/dashboard">Dashboard</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="/profile/{{user.id}}">Profile</a>
+                                <a class="nav-link" href="/profile">Profile</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="/">log Out</a>
@@ -27,8 +27,8 @@
 
 
 
-{{#if loggedIn}}
-{{> event-info post}}
+{{#if logged_in}}
+{{> event-info event}}
 {{/if}}
 
 {{> rsvp-info event.rsvp}}
@@ -36,4 +36,4 @@
 {{#if loggedIn}}
 <script src="../js/rsvp.js"></script>
 {{/if}}
-<script src="/js/logout.js"></script>
+<script src="../js/logout.js"></script>
