@@ -9,7 +9,7 @@ router.get('/', async (req, res) => {
       include: [
           {
               model: User, 
-              attributes: ['id', 'username'],
+              attributes: ['id'],
           },
         {
           model: Event,
@@ -31,6 +31,24 @@ router.get('/', async (req, res) => {
 });
 
 router.get('/event/:id/rsvp', async (req, res) => {
+
+   try {
+   let event;
+   const rsvpData = await Event.findByPk(req.params.id, {
+    include: [{model: Rsvp, include: [User]}]
+   })
+   event = rsvpData.get({plain: true});
+    console.log(event);
+
+    res.render('rsvp', { 
+      event, 
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+router.post('/:event_id/:user_id', async (req, res) => {
   try {
     let rsvps;
     const rsvpData = await Rsvp.findAll({

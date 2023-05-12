@@ -1,6 +1,7 @@
 const rsvpFormHandler = async (event) => {
   event.preventDefault()
 
+
   var messageInput = document.getElementById("messageInput").value;
 
   const url = `/api/rsvp/${event.target.dataset.user}/${event.target.dataset.event}`;
