@@ -1,32 +1,33 @@
 const rsvpFormHandler = async (event) => {
-  event.preventDefault();
+  event.preventDefault()
 
   var messageInput = document.getElementById("messageInput").value;
 
-  const response = await fetch(`/api/rsvp/:user_id/:event_id`, {
+  const url = `/api/rsvp/${event.target.dataset.user}/${event.target.dataset.event}`;
+  const response = await fetch(url, {
     method: 'POST',
     body: JSON.stringify({ messageInput: messageInput}),
     headers: {
       'Content-Type': 'application/json',
     },
   });
-      var messageOutput = document.getElementById("messageOutput");
-
-      messageOutput.textContent = response;
 
   if (response.ok) {
     // RSVP success
     alert('RSVP submitted successfully!');
     // Redirect to a thank you page or any other appropriate page
-    document.location.replace('/profile');
+    //document.location.replace('/profile');
+    location.reload();
   } else {
     // RSVP failure
     alert('Failed to submit RSVP');
   }
 }
 
+console.log("Loaded");
+
 document
-.getElementById("rsvpSubmitButton")
+.querySelector("#rsvp-form")
   .addEventListener('submit', rsvpFormHandler);
 
   // document

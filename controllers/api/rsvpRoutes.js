@@ -4,7 +4,7 @@ const { Rsvp, Event, User } = require('../../models');
 
 router.get('/', async (req, res) => {
   try {
-   
+
     const rsvpData = await Rsvp.findAll({
       include: [
           {
@@ -34,7 +34,7 @@ router.get('/', async (req, res) => {
   router.post('/:user_id/:event_id', async (req, res) => {
     try {
       const rsvpData = await Rsvp.create({
-        rsvp_message: req.body.message,
+        rsvp_message: req.body.messageInput,
         user_id: req.params.user_id,
         event_id: req.params.event_id
       });

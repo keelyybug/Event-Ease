@@ -1,17 +1,13 @@
 <div class="rsvp vh-100">
-  {{#each this}}
     <div class="card">
         <h3 class="card-header"></h3>
         <section class="comment card-body">
             <div class="text">
-                <p>{{username}}</p>
+                <p>{{user.username}}</p>
             </div>
             <div class="meta">
-                <p id="messageOutput"></p>
+                <p id="messageOutput">{{rsvp_message}}</p>
             </div>
         </section>
     </div>
-  {{/each}}
 </div>
-
-<script src="/js/rsvp.js"></script>
