@@ -13,7 +13,7 @@ router.get('/', async (req, res) => {
           },
         {
           model: Event,
-          attributes: ['id'],
+          attributes: ['id', 'event_title'],
         },
       ],
     });
@@ -56,15 +56,14 @@ router.get('/event/:id/rsvp', async (req, res) => {
       const rsvpData = await Rsvp.create({
         rsvp_message: req.body.messageInput,
         user_id: req.params.user_id,
-        event_id: req.params.event_id,
-      },
-    });
-
-    res.status(200).json(rsvpData);
-  } catch (err) {
-    res.status(400).json(err);
-  }
-});
+        event_id: req.params.event_id
+      });
+  
+      res.status(200).json(rsvpData);
+    } catch (err) {
+      res.status(400).json(err);
+    }
+  });
 
   router.delete('/:id', async (req, res) => {
     try {
