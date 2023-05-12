@@ -25,7 +25,7 @@
             </nav>
 </header>
 
-{{#if rsvps.length}}
+{{#if rsvps}}
 <section>
   <h1><a class="link" href="/single-event/{{id}}">Attendees</a></h1>
     {{#each rsvps as |rsvp|}}
@@ -50,16 +50,15 @@
         </div>
           <div class="modal-body">
             <div class="mb-3">
-            <label for="name" class="col-form-label">Your Name:</label>
-            <input type="text" class="form-control" id="name">
+            <h2 class="col"></h2>
           </div>
           <div class="mb-3">
-            <label for="message" class="col-form-label">RSVP Message:</label>
-            <textarea class="form-control" id="message"></textarea>
+            <label for="messageInput" class="col-form-label">RSVP Message:</label>
+            <textarea class="form-control" name="messageInput" id="messageInput"></textarea>
           </div>
        <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">NVM</button>
-        <button type="submit" class="btn btn-primary" href="/profile">Save My RSVP</button>
+        <button type="submit" class="btn btn-primary" id="rsvpSubmitButton" href="/profile">Save My RSVP</button>
         </div>
       </div>
     </div>

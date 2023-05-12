@@ -4,12 +4,14 @@
         <h3 class="card-header"></h3>
         <section class="comment card-body">
             <div class="text">
-                {{rsvp_message}}
+                <p>{{username}}</p>
             </div>
             <div class="meta">
-                -{{user.username}}
+                <p id="messageOutput"></p>
             </div>
         </section>
     </div>
   {{/each}}
 </div>
+
+<script src="/js/rsvp.js"></script>

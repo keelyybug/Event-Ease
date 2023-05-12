@@ -21,7 +21,7 @@ router.get('/', async (req, res) => {
    
     const rsvps = rsvpData.map((rsvp) => rsvp.get({ plain: true }));
 
-
+    console.log(rsvps);
     res.render('rsvp', { 
       rsvps, 
     });
@@ -34,7 +34,7 @@ router.get('/', async (req, res) => {
   router.post('/:user_id/:event_id', async (req, res) => {
     try {
       const rsvpData = await Rsvp.create({
-        ...req.body,
+        rsvp_message: req.body.message,
         user_id: req.params.user_id,
         event_id: req.params.event_id
       });

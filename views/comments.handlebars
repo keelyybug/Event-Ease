@@ -1,0 +1,13 @@
+{{#if comments.length}}
+<section>
+  <h2>Your Posts</h2>
+    {{#each comments as |comment|}}
+      {{> comment-info comment}}
+    {{/each}}
+
+</section>
+{{/if}}
+
+<button type="submit" class="btn"><a class="link" href="/comments/new">+ New Comment</a></button>
+
+<script src="../js/comments.js"></script>
