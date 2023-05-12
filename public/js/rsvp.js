@@ -2,10 +2,11 @@ const rsvpFormHandler = async (event) => {
   event.preventDefault();
 
   const message = document.querySelector('#rsvpMessage').value.trim();
+  
 
   if (message) {
     console.log(message);
-  const response = await fetch(`/api/rsvp`, {
+  const response = await fetch(`/rsvp`, {
     method: 'POST',
     body: JSON.stringify({ message: message }),
     headers: {

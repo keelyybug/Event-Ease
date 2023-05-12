@@ -9,7 +9,7 @@ router.get('/', async (req, res) => {
       include: [
           {
               model: User, 
-              attributes: ['id', 'username'],
+              attributes: ['id'],
           },
         {
           model: Event,
@@ -30,7 +30,28 @@ router.get('/', async (req, res) => {
   }
 });
 
-router.post('/:user_id/:event_id', async (req, res) => {
+router.get('/event/:id/rsvp', async (req, res) => {
+  try {
+   let rsvps;
+    const rsvpData = await Rsvp.findAll({
+      where: {event_id: req.params.event_id}
+    });
+    if (rsvpData) {
+      rsvps = rsvpData.map((rsvp) => rsvp.get({ plain: true })); 
+    } else {
+      rsvps = []
+    }
+    console.log(rsvps);
+
+    res.render('rsvp', { 
+      rsvps, 
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+router.post('/:event_id/:user_id', async (req, res) => {
   try {
     const rsvpData = await Rsvp.create({
       where: {
