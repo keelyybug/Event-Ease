@@ -112,21 +112,37 @@ router.get('/single-event', withAuth, async (req, res) => {
   }
 });
 
+router.get('/dashboard', withAuth, async (req, res) => {
+  try {
+
+    const eventData = await Event.findAll(req.body, {
+      include: [{model: User}]
+    });
+   
+    const events = eventData.map((event) => event.get({ plain: true }));
+
+    console.log(events);
+    res.render('dashboard', {events, logged_in: true});
+  } catch (err) {
+    res.redirect('/profile');
+  }
+});
+
 
 // Edit Event Page
-router.get('/edit-event', withAuth, async (req, res) => {
+router.get('/edit-event/:id', withAuth, async (req, res) => {
   try {
-    // Find the logged in user based on the session ID
-    const userData = await User.findByPk(req.session.user_id, {
+    const eventData = await Event.findByPk({
+      where: {user_id: req.session.user_id},
       attributes: { exclude: ['password'] },
-      include: [{ model: Project }],
+      include: [{ model: User }],
     });
 
-    const user = userData.get({ plain: true });
-
+    const events = eventData.get({ plain: true });
+    console.log(events);
     res.render('edit-event', {
-      ...user,
-      logged_in: true, title: 'Edit Event'
+      ...events,
+      logged_in: true
     });
   } catch (err) {
     res.status(500).json(err);
@@ -134,11 +150,11 @@ router.get('/edit-event', withAuth, async (req, res) => {
 });
 
 // Edit individual event
-router.get('/edit/:id', (req, res) => {
-  const itemId = req.params.id;
+// router.get('/edit/:id', (req, res) => {
+//   const itemId = req.params.id;
 
-  res.render('edit', { item });
-});
+//   res.render('edit', { item });
+// });
 
 router.post('/update/:id', (req, res) => {
   const itemId = req.params.id;
@@ -155,25 +171,6 @@ router.delete('/items/:id', (req, res) => {
 });
 
 
-// Comments page
-router.get('/comments', withAuth, async (req, res) => {
-  try {
-    // Find the logged in user based on the session ID
-    const userData = await User.findByPk(req.session.user_id, {
-      attributes: { exclude: ['password'] },
-      include: [{ model: Project }],
-    });
-
-    const user = userData.get({ plain: true });
-
-    res.render('comments', {
-      ...user,
-      logged_in: true, title: 'Comments'
-    });
-  } catch (err) {
-    res.status(500).json(err);
-  }
-});
 
 // Rsvp Page
 router.get('/rsvp', (req, res) => {
@@ -213,6 +210,7 @@ router.get('/event/:id/rsvp', async (req, res) => {
 router.get('/dashboard', (req, res) => {
   res.render('dashboard', { title: 'Dashboard' });
 });
+
 
 //Event
 
