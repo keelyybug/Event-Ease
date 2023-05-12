@@ -180,58 +180,6 @@ router.delete('/items/:id', (req, res) => {
 });
 
 
-router.get('/rsvp', async (req, res) => {
-  try {
-   
-    const rsvpData = await Rsvp.findAll({
-      include: [
-          {
-              model: User, 
-              attributes: ['id', 'username'],
-          },
-        {
-          model: Event,
-          attributes: ['id', 'event_title'],
-        },
-      ],
-    });
-
-   
-    const rsvps = rsvpData.map((rsvp) => rsvp.get({ plain: true }));
-
-
-    res.render('rsvp', { 
-      rsvps, 
-    });
-  } catch (err) {
-    res.status(500).json(err);
-  }
-});
-
-router.post('/event/:id/rsvp', async (req, res) => {
-  try {
-    const rsvpData = await Rsvp.create({
-      ...req.body,
-      user_id: req.params.user_id,
-      event_id: req.params.event_id
-    });
-
-    res.status(200).json(rsvpData);
-  } catch (err) {
-    res.status(400).json(err);
-  }
-});
-// Rsvp Page
-router.get('/rsvp', (req, res) => {
-  res.render('rsvp', { title: 'Rsvp' });
-});
-
-router.post('/rsvp', (req, res) => {
-  const { name, email } = req.body;
-
-  res.sendStatus(200);
-});
-
 router.get('/event/:id/rsvp', async (req, res) => {
   try {
    let rsvps;
