@@ -25,6 +25,24 @@ router.get('/profile', withAuth, async (req, res) => {
   } catch (err) {
     res.status(500).json(err);
   }
+  
+});
+
+router.get('/event', async (req, res) => {
+  try {
+
+    const eventData = await Event.findAll({
+      ...req.body,
+      include: [{model: User, attributes: ['id'] }]
+    });
+
+    const events = eventData.map((event) => event.get({ plain: true }));
+
+    console.log(events);
+    res.render('profile', {...events});
+  } catch (err) {
+    console.log(err);
+  }
 });
 
 router.get('/login', (req, res) => {
@@ -70,7 +88,7 @@ router.get('/single-event', withAuth, async (req, res) => {
     // Find the logged in user based on the session ID
     const userData = await User.findByPk(req.session.user_id, {
       attributes: { exclude: ['password'] },
-      include: [{ model: Project }],
+      include: [{ model: Event }],
     });
 
     const user = userData.get({ plain: true });
@@ -171,5 +189,8 @@ router.post('/rsvp', (req, res) => {
 router.get('/dashboard', (req, res) => {
   res.render('dashboard', { title: 'Dashboard' });
 });
+
+//Event
+
 
 module.exports = router;

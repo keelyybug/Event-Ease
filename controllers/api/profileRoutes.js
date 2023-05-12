@@ -1,8 +1,9 @@
 const router = require('express').Router();
-const { Event } = require('../../models');
+const { User, Event, Rsvp } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 //* Get event by ID
+
 router.get('/event/:id', async (req, res) => {
     try {
       const eventData = await Event.findByPk(req.params.id, {
@@ -27,14 +28,15 @@ router.get('/event/:id', async (req, res) => {
 
 
 
+
+
 //* Create event
 router.post('/event', withAuth, async (req, res) => {
     try{
         const createEvent = await Event.create({
-            user_id: req.session.id,
-            event_title: req.body.event_title,
-            event_description: req.body.event_description,
-            event_date: req.body.event_date
+            ...req.body,
+            user_id: req.session.user_id,
+            
         });
 
         req.session.save(() => {

@@ -8,18 +8,16 @@ router.get('/', withAuth, async (req, res) => {
   try {
 
     const eventData = await Event.findAll({
-      where:{"userId": req.session.user_id},
-      include: [User]
+      where:{ user_id: req.session.user_id},
+      include: [{model: User}]
     });
 
-    const events = eventData.map((post) => post.get({ plain: true }));
+    const events = eventData.map((event) => event.get({ plain: true }));
+
     console.log(events);
-    res.render('all-events', {
-      layout: 'dashboard',
-      posts,
-    });
+    res.render('all-events');
   } catch (err) {
-    res.redirect('login');
+    res.redirect('/profile');
   }
 });
 
