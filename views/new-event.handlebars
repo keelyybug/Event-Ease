@@ -25,15 +25,15 @@
             </nav>
 </header>
 
-<div class="card">
-  <h3 class="card-header">Create New Event</h3>
+<div class="card vh-100 align-content-center d-flex">
+  <h3 class="card-header text-white">Create New Event</h3>
 <form id="eventform" class="card-body edit-event-form">
-        <label for="event-title" class="form-label">Title</label>
-        <input id="event-title" name="event-title" type="text" value="{{event.event_title}}" class="form-input" />
-        <label class="form-label" for="event-description">Description</label>
-        <input id="event-description" name="event-description" type="text" value="{{event.event_description}}" class="form-input" />
-        <label for="event-date" class="form-label">Event Date:</label>
-        <input id="event-date" name="event-date" type="text" value="{{event.event_date}}" class="form-input"/>
+        <label for="event-title" class="form-label text-white">Title</label>
+        <input id="event-title" name="event-title" type="text" value="{{event_title}}" class="form-input" />
+        <label class="form-label text-white" for="event-description">Description</label>
+        <input id="event-description" name="event-description" type="text" value="{{event_description}}" class="form-input" />
+        <label for="event-date" class="form-label text-white">Event Date:</label>
+        <input id="event-date" name="event-date" type="text" value="{{event_date}}" class="form-input"/>
 
     <button type="submit" class="btn start btn-primary mt-3 mb-5" onclick="window.location.href = '/profile'">Create</button>
   </form>
