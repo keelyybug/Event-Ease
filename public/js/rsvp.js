@@ -2,11 +2,11 @@ const rsvpFormHandler = async (event) => {
   event.preventDefault();
 
   const name = document.querySelector('#name').value.trim();
-  const email = document.querySelector('#email').value.trim();
+  const message = document.querySelector('#message').value.trim();
 
   const response = await fetch(`/rsvp`, {
     method: 'POST',
-    body: JSON.stringify({ name, email }),
+    body: JSON.stringify({ name, message }),
     headers: {
       'Content-Type': 'application/json',
     },
