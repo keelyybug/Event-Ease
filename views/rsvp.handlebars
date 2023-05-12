@@ -42,7 +42,7 @@
 {{!-- new rsvp modal  --}}
 <div class="modal fade" id="rsvpNew" tabindex="-1" aria-labelledby="rsvpNewLabel" aria-hidden="true">
   <div class="modal-dialog">
-    <form class="rsvp-form">
+    <form id="rsvpForm">
       <div class="modal-content">
         <div class="modal-header">
           <h1 class="modal-title fs-5" id="rsvpNewLabel">New RSVP</h1>
@@ -50,12 +50,13 @@
         </div>
           <div class="modal-body">
             <div class="mb-3">
+              <label for="event-id" class="d-none">  <input type="none" id="event-id" value="{{id}}"/></label>
             <label for="name" class="col-form-label">Your Name:</label>
-            <input type="text" class="form-control" id="name">
+            <input name="name" type="text" class="form-control" id="rsvpName">
           </div>
           <div class="mb-3">
             <label for="message" class="col-form-label">RSVP Message:</label>
-            <textarea class="form-control" id="message"></textarea>
+            <textarea name="message" class="form-control" id="rsvpMessage"></textarea>
           </div>
        <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">NVM</button>

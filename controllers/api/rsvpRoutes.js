@@ -13,7 +13,7 @@ router.get('/', async (req, res) => {
           },
         {
           model: Event,
-          attributes: ['id', 'event_title'],
+          attributes: ['id'],
         },
       ],
     });
@@ -30,20 +30,21 @@ router.get('/', async (req, res) => {
   }
 });
 
-  
-  router.post('/:user_id/:event_id', async (req, res) => {
-    try {
-      const rsvpData = await Rsvp.create({
-        ...req.body,
+router.post('/:user_id/:event_id', async (req, res) => {
+  try {
+    const rsvpData = await Rsvp.create({
+      where: {
+        id: req.params.id,
         user_id: req.params.user_id,
-        event_id: req.params.event_id
-      });
-  
-      res.status(200).json(rsvpData);
-    } catch (err) {
-      res.status(400).json(err);
-    }
-  });
+        event_id: req.params.event_id,
+      },
+    });
+
+    res.status(200).json(rsvpData);
+  } catch (err) {
+    res.status(400).json(err);
+  }
+});
 
   router.delete('/:id', async (req, res) => {
     try {
