@@ -2,34 +2,6 @@ const router = require('express').Router();
 const { User, Event, Rsvp } = require('../../models');
 const withAuth = require('../../utils/auth');
 
-//* Get event by ID
-
-router.get('/event/:id', async (req, res) => {
-    try {
-      const eventData = await Event.findByPk(req.params.id, {
-        include: [
-          {
-            model: User,
-            attributes: ['username'],
-          },
-        ],
-      });
-  
-      const event = eventData.get({ plain: true });
-  
-      res.render('myevent', {
-        ...event,
-        logged_in: req.session.logged_in
-      });
-    } catch (err) {
-      res.status(500).json(err);
-    }
-  });
-
-
-
-
-
 //* Create event
 router.post('/event', withAuth, async (req, res) => {
     try{
