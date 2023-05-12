@@ -27,15 +27,15 @@
 
 <div class="row">
   <div class="col-auto">
-    <h1>Welcome, {{first}}{{last}}!</h1>
+    <h1>Welcome, {{first}} {{last}}!</h1>
   </div>
 </div>
 <div class="container">
-{{#if events.length}}
+{{#if logged_in}}
 <section>
     <h3>My Events</h3>
     {{#each events as |event|}}
-      {{> profile-info post}}
+      {{> event-info event}}
     {{/each}}
 
 </section>
@@ -47,5 +47,5 @@
 
 
 
-<script src="../js/profile.js"></script>
+
 <script src="../js/logout.js"></script>

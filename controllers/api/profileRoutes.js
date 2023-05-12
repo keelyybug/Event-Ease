@@ -3,6 +3,7 @@ const { User, Event, Rsvp } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 //* Get event by ID
+
 router.get('/event/:id', async (req, res) => {
     try {
       const eventData = await Event.findByPk(req.params.id, {
@@ -24,6 +25,8 @@ router.get('/event/:id', async (req, res) => {
       res.status(500).json(err);
     }
   });
+
+
 
 
 
