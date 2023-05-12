@@ -1,15 +1,15 @@
 <div class="card">
   <div class="row mb-2">
     <div class="col-md-8">
-        <h4><a href="/profile/single-event/{{event.id}}">{{event.title}}</a></h4>
+        <h4><a href="/profile/single-event/{{id}}">{{event_title}}</a></h4>
     </div>
       <div class="col-md-4">
-        <button class="btn btn-sm btn-danger project-list" data-id="{{event.id}}">DELETE</button>
-        <button class="btn btn-sm" data-id="{{}}" type="button">
+        <button class="btn btn-sm btn-danger project-list" data-id="{{id}}">DELETE</button>
+        <button class="btn btn-sm" type="button">
           <a href="/rsvp">Attendees</a> 
         </button> 
-        <button class="btn btn-sm" data-id="{{}}" type="button">
-          <a href="/edit">Edit</a> 
+        <button class="btn btn-sm" type="button">
+          <a href="/edit-event">Edit</a> 
         </button> 
       </div>
     </div>
