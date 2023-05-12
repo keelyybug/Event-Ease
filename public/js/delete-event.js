@@ -1,19 +1,19 @@
 const delButtonHandler = async (event) => {
-  if (event.target.hasAttribute('data-id')) {
-    const id = event.target.getAttribute('data-id');
-
-    const response = await fetch(`/api/projects/${id}`, {
+    // const id = event.target.getAttribute('event');
+    console.log('hello');
+    const id = event.target.dataset.id;
+    const response = await fetch(`/edit-event/${id}`, {
       method: 'DELETE',
     });
 
     if (response.ok) {
-      document.location.replace('/profile');
+      document.location.reload();
     } else {
-      alert('Failed to delete project');
+      alert('Failed to delete event');
     }
   }
-};
+;
 
 document
-  .querySelector('.edit-event-form')
+  .querySelector('#delete')
   .addEventListener('click', delButtonHandler);
