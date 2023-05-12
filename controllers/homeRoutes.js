@@ -93,7 +93,7 @@ router.get('/new-event', withAuth, async (req, res) => {
 });
 
 // Single Event Page
-router.get('/single-event', withAuth, async (req, res) => {
+router.get('/single-event/:id', withAuth, async (req, res) => {
   try {
     // Find the logged in user based on the session ID
     const userData = await User.findByPk(req.session.user_id, {
@@ -132,8 +132,7 @@ router.get('/dashboard', withAuth, async (req, res) => {
 // Edit Event Page
 router.get('/edit-event/:id', withAuth, async (req, res) => {
   try {
-    const eventData = await Event.findByPk({
-      where: {user_id: req.session.user_id},
+    const eventData = await Event.findByPk(req.session.user_id,{
       attributes: { exclude: ['password'] },
       include: [{ model: User }],
     });
