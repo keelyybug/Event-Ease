@@ -1,14 +1,13 @@
 const rsvpFormHandler = async (event) => {
-  event.preventDefault();
+  event.preventDefault()
 
-  const message = document.querySelector('#rsvpMessage').value.trim();
-  
 
-  if (message) {
-    console.log(message);
-  const response = await fetch(`/rsvp`, {
+  var messageInput = document.getElementById("messageInput").value;
+
+  const url = `/api/rsvp/${event.target.dataset.user}/${event.target.dataset.event}`;
+  const response = await fetch(url, {
     method: 'POST',
-    body: JSON.stringify({ message: message }),
+    body: JSON.stringify({ messageInput: messageInput}),
     headers: {
       'Content-Type': 'application/json',
     },
@@ -18,7 +17,8 @@ const rsvpFormHandler = async (event) => {
     // RSVP success
     alert('RSVP submitted successfully!');
     // Redirect to a thank you page or any other appropriate page
-    document.location.replace('/profile');
+    //document.location.replace('/profile');
+    location.reload();
   } else {
     // RSVP failure
     alert('Failed to submit RSVP');
@@ -26,6 +26,8 @@ const rsvpFormHandler = async (event) => {
 }
 }
 
+console.log("Loaded");
+
 document
-  .querySelector('#rsvpForm')
+.querySelector("#rsvp-form")
   .addEventListener('submit', rsvpFormHandler);

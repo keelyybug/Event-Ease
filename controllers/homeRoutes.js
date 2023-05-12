@@ -177,19 +177,23 @@ router.delete('/edit-event/:id', withAuth, async (req, res) => {
 
 router.get('/event/:id/rsvp', async (req, res) => {
   try {
-   let rsvps;
-    const rsvpData = await Rsvp.findAll({
-      where: {event_id: req.params.id}
-    });
-    if (rsvpData) {
-      rsvps = rsvpData.map((rsvp) => rsvp.get({ plain: true })); 
-    } else {
-      rsvps = []
-    }
-    console.log(rsvps);
+   let event;
+   const rsvpData = await Event.findByPk(req.params.id, {
+    include: [{model: Rsvp, include: [User]}]
+   })
+   event = rsvpData.get({plain: true});
+    // const rsvpData = await Rsvp.findAll({
+    //   where: {event_id: req.params.id}
+    // });
+    // if (rsvpData) {
+    //   rsvps = rsvpData.map((rsvp) => rsvp.get({ plain: true })); 
+    // } else {
+    //   rsvps = []
+    // }
+    console.log(event);
 
     res.render('rsvp', { 
-      rsvps, 
+      event, 
     });
   } catch (err) {
     res.status(500).json(err);

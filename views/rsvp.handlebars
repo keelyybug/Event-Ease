@@ -24,16 +24,15 @@
                 </div>
             </nav>
 </header>
+<h1><a class="link text-white text-center" href="/single-event/{{event.id}}">Attendees</a></h1>
 
-{{#if rsvps.length}}
 <section>
-  <h1><a class="link" href="/single-event/{{id}}">Attendees</a></h1>
-    {{#each rsvps as |rsvp|}}
-      {{> rsvp-info rsvp}}
+    {{#each event.rsvps}}
+      {{> rsvp-info}}
     {{/each}}
 
 </section>
-{{/if}}
+
 
 <!-- Button trigger modal -->
 <div class="d-flex justify-content-center align-items-center vh-100">
@@ -42,7 +41,7 @@
 {{!-- new rsvp modal  --}}
 <div class="modal fade" id="rsvpNew" tabindex="-1" aria-labelledby="rsvpNewLabel" aria-hidden="true">
   <div class="modal-dialog">
-    <form id="rsvpForm">
+    <form class="rsvp-form" id="rsvp-form" data-event="{{event.id}}" data-user="{{event.user_id}}">
       <div class="modal-content">
         <div class="modal-header">
           <h1 class="modal-title fs-5" id="rsvpNewLabel">New RSVP</h1>
@@ -50,15 +49,15 @@
         </div>
           <div class="modal-body">
             <div class="mb-3">
-              <label for="event-id" class="d-none">  <input type="none" id="event-id" value="{{id}}"/></label>
+            <h2 class="col"></h2>
           </div>
           <div class="mb-3">
-            <label for="message" class="col-form-label">RSVP Message:</label>
-            <textarea name="message" class="form-control" id="rsvpMessage"></textarea>
+            <label for="messageInput" class="col-form-label">RSVP Message:</label>
+            <textarea class="form-control" name="messageInput" id="messageInput"></textarea>
           </div>
        <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">NVM</button>
-        <button type="submit" class="btn btn-primary" href="/profile">Save My RSVP</button>
+        <button type="submit" class="btn btn-primary" id="rsvpSubmitButton" href="/profile">Save My RSVP</button>
         </div>
       </div>
     </div>

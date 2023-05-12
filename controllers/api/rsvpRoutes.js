@@ -4,7 +4,7 @@ const { Rsvp, Event, User } = require('../../models');
 
 router.get('/', async (req, res) => {
   try {
-   
+
     const rsvpData = await Rsvp.findAll({
       include: [
           {
@@ -13,7 +13,7 @@ router.get('/', async (req, res) => {
           },
         {
           model: Event,
-          attributes: ['id'],
+          attributes: ['id', 'event_title'],
         },
       ],
     });
@@ -21,7 +21,7 @@ router.get('/', async (req, res) => {
    
     const rsvps = rsvpData.map((rsvp) => rsvp.get({ plain: true }));
 
-
+    console.log(rsvps);
     res.render('rsvp', { 
       rsvps, 
     });
@@ -31,8 +31,26 @@ router.get('/', async (req, res) => {
 });
 
 router.get('/event/:id/rsvp', async (req, res) => {
+
+   try {
+   let event;
+   const rsvpData = await Event.findByPk(req.params.id, {
+    include: [{model: Rsvp, include: [User]}]
+   })
+   event = rsvpData.get({plain: true});
+    console.log(event);
+
+    res.render('rsvp', { 
+      event, 
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+router.post('/:event_id/:user_id', async (req, res) => {
   try {
-   let rsvps;
+    let rsvps;
     const rsvpData = await Rsvp.findAll({
       where: {event_id: req.params.event_id}
     });
@@ -50,22 +68,20 @@ router.get('/event/:id/rsvp', async (req, res) => {
     res.status(500).json(err);
   }
 });
-
-router.post('/:event_id/:user_id', async (req, res) => {
-  try {
-    const rsvpData = await Rsvp.create({
-      where: {
-        id: req.params.id,
+  
+  router.post('/:user_id/:event_id', async (req, res) => {
+    try {
+      const rsvpData = await Rsvp.create({
+        rsvp_message: req.body.messageInput,
         user_id: req.params.user_id,
-        event_id: req.params.event_id,
-      },
-    });
-
-    res.status(200).json(rsvpData);
-  } catch (err) {
-    res.status(400).json(err);
-  }
-});
+        event_id: req.params.event_id
+      });
+  
+      res.status(200).json(rsvpData);
+    } catch (err) {
+      res.status(400).json(err);
+    }
+  });
 
   router.delete('/:id', async (req, res) => {
     try {

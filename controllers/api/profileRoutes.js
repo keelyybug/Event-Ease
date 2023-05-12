@@ -23,11 +23,6 @@ router.post('/event', withAuth, async (req, res) => {
     }
   });
   
-//* Update event  
-
-
-
-
 
 module.exports = router;
 
