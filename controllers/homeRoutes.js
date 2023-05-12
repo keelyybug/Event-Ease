@@ -165,14 +165,6 @@ router.get('/comments', withAuth, async (req, res) => {
   }
 });
 
-// Post comments
-router.post('/create-new-comment', (req, res) => {
-  const newComment = req.body;
-
-  res.redirect('/comments');
-});
-
-
 // Rsvp Page
 router.get('/rsvp', (req, res) => {
   res.render('rsvp', { title: 'Rsvp' });
