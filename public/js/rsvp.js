@@ -16,7 +16,7 @@ const rsvpFormHandler = async (event) => {
     // RSVP success
     alert('RSVP submitted successfully!');
     // Redirect to a thank you page or any other appropriate page
-    document.location.replace('/thank-you');
+    document.location.replace('/profile');
   } else {
     // RSVP failure
     alert('Failed to submit RSVP');
