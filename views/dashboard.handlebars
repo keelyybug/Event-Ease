@@ -24,12 +24,13 @@
                 </div>
             </nav>
 </header>
+
 {{#if logged_in}}
 <article class="event">
     <h1>All Events Dashboard</h1>
 <div class="container">
     {{#each events as |event| }}
-        {{> dashboard-info event}}
+        {{> event-info event}}
     {{/each}}
 </div>
 </article>
