@@ -30,34 +30,6 @@ router.get('/', async (req, res) => {
   }
 });
 
-router.get('/:id', async (req, res) => {
-    try {
-     
-      const rsvpData = await Rsvp.findByPk(req.params.id, {
-        include: [
-            {
-                model: User, 
-                attributes: ['id', 'username'],
-
-            },
-          {
-            model: Event,
-            attributes: ['id', 'event_title'],
-          },
-        ],
-      });
-
-      const rsvps = rsvpData.map((rsvp) => rsvp.get({ plain: true }));
-  
-  
-      res.render('rsvp', { 
-        rsvps, 
-      });
-    } catch (err) {
-      res.status(500).json(err);
-    }
-  });
-
   
   router.post('/:user_id/:event_id', async (req, res) => {
     try {
