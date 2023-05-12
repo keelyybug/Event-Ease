@@ -27,7 +27,7 @@
 
 {{#if rsvps.length}}
 <section>
-  <h1><a class="link" href="/single-post/{{event.id}}">{{event_title}}'s Attendees</a></h1>
+  <h1><a class="link" href="/single-event/{{event.id}}">{{event_title}}'s Attendees</a></h1>
     {{#each rsvps as |rsvp|}}
       {{> rsvp-info rsvp}}
     {{/each}}
