@@ -27,17 +27,19 @@
 
 <div class="card">
     <h3 class="card-header">Edit My Event</h3>
-    <form class="card-body edit-post-form">
+    <form class="card-body edit-event-form">
+        <label for="event-id" class="d-none">  <input type="none" id="event-id" value="{{id}}"/></label>
+      
         <label for="post-title" class="form-label">Title</label>
-        <input name="post-title" type="text" value="{{event.event_title}}" class="form-input" />
+        <input id="event-title" name="post-title" type="text" value="{{eventName}}" class="form-input" />
         <label class="form-label" for="post-content">Description</label>
-        <input name="post-content" type="text" value="{{event.event_content}}" class="form-input" />
+        <input id="event-description" name="post-content" type="text" value="{{eventDescription}}" class="form-input" />
         <label for="event-date" class="form-label">Event Date:</label>
-        <input name="event-date" type="text" value="{{event.event_date}}" class="form-input"/>
+        <input id="event-date" name="event-date" type="text" value="{{eventDate}}" class="form-input"/>
         <div class="container">
             <div class="row">
-                <button type="submit" class="btn start btn-primary mt-3 mb-5" onclick="window.location.href = '/user/{{user.id}}/profile'">Update</button>
-                <button type="submit" class="btn start btn-primary mt-3 mb-5" onclick="window.location.href = '/user/{{user.id}}/profile'">Return</button>
+                <button type="submit" class="btn start btn-primary mt-3 mb-5" onclick="window.location.href = '/profile'">Update</button>
+                <button type="submit" class="btn start btn-primary mt-3 mb-5" onclick="window.location.href = '/profile'">Return</button>
                 <button type="button" class="delete-post-btn btn col mt-3 mb-5">Delete Event</button>
             </div>
         </div>
@@ -47,4 +49,4 @@
 
 <script src="../js/edit-event.js"></script>
 <script src="../js/delete-event.js"></script>
-<script src="/js/logout.js"></script>
+<script src="../js/logout.js"></script>

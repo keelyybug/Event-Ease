@@ -5,7 +5,7 @@ const rsvpFormHandler = async (event) => {
 
   const response = await fetch(`/api/rsvp/:user_id/:event_id`, {
     method: 'POST',
-    body: JSON.stringify({ messageInput: messageInput}),
+    body: JSON.stringify({ messageInput: messageInput})
     headers: {
       'Content-Type': 'application/json',
     },
@@ -23,6 +23,7 @@ const rsvpFormHandler = async (event) => {
     // RSVP failure
     alert('Failed to submit RSVP');
   }
+}
 }
 
 document

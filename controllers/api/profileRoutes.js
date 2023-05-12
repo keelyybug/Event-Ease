@@ -24,25 +24,7 @@ router.post('/event', withAuth, async (req, res) => {
   });
   
 //* Update event  
-router.put('/event/:id', withAuth, async (req, res) => {
-    try{
-        const editEvent = await Event.update({
-            event_title: req.body.event_title,
-            event_description: req.body.event_description,
-            event_date: req.body.event_date
-        },
-        {
-            where: {
-                id: req.params.id,
-                user_id: req.session.user_id
-            },
-        });
 
-        res.status(200).json(editEvent);
-    } catch (err) {
-        res.status(500).json(err);
-    }
-});
 
 
   //* Delete event

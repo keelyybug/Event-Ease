@@ -82,6 +82,9 @@ router.get('/new-event', withAuth, async (req, res) => {
     });
 
     const user = userData.get({ plain: true });
+    req.session.save(() => {
+      req.session.user_id = userData.id;
+      req.session.loggedIn = true;})
 
     res.render('new-event', {
       ...user,
@@ -150,14 +153,25 @@ router.get('/edit-event/:id', withAuth, async (req, res) => {
   }
 });
 
+router.put('/edit-event/:id', withAuth, async (req, res) => {
+  try{
+      const editEvent = await Event.update({
+          event_title: req.body.eventName,
+          event_description: req.body.eventDescription,
+          event_date: req.body.eventDate
+      },
+      {
+          where: {
+              id: req.params.id,
+              user_id: req.session.user_id
+          },
+      });
 
-router.post('/update/:id', (req, res) => {
-  const itemId = req.params.id;
-  const updatedItem = req.body;
-
-  res.redirect('/items');
+      res.status(200).json(editEvent);
+  } catch (err) {
+      res.status(500).json(err);
+  }
 });
-
 // Delete individual event
 router.delete('/items/:id', (req, res) => {
   const itemId = req.params.id;
@@ -166,7 +180,47 @@ router.delete('/items/:id', (req, res) => {
 });
 
 
+router.get('/rsvp', async (req, res) => {
+  try {
+   
+    const rsvpData = await Rsvp.findAll({
+      include: [
+          {
+              model: User, 
+              attributes: ['id', 'username'],
+          },
+        {
+          model: Event,
+          attributes: ['id', 'event_title'],
+        },
+      ],
+    });
 
+   
+    const rsvps = rsvpData.map((rsvp) => rsvp.get({ plain: true }));
+
+
+    res.render('rsvp', { 
+      rsvps, 
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+router.post('/event/:id/rsvp', async (req, res) => {
+  try {
+    const rsvpData = await Rsvp.create({
+      ...req.body,
+      user_id: req.params.user_id,
+      event_id: req.params.event_id
+    });
+
+    res.status(200).json(rsvpData);
+  } catch (err) {
+    res.status(400).json(err);
+  }
+});
 // Rsvp Page
 router.get('/rsvp', (req, res) => {
   res.render('rsvp', { title: 'Rsvp' });
