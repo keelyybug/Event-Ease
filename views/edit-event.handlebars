@@ -25,8 +25,8 @@
             </nav>
 </header>
 
-<div class="card">
-    <h3 class="card-header">Edit My Event</h3>
+<div class="card vh-100 align-content-center d-flex">
+    <h3 class="card-header text-white">Edit My Event</h3>
     <form class="card-body edit-event-form">
         <label for="event-id" class="d-none">  <input type="none" id="event-id" value="{{id}}"/></label>
       
@@ -36,13 +36,11 @@
         <input id="event-description" name="post-content" type="text" value="{{eventDescription}}" class="form-input" />
         <label for="event-date" class="form-label">Event Date:</label>
         <input id="event-date" name="event-date" type="text" value="{{eventDate}}" class="form-input"/>
-        <div class="container">
-            <div class="row">
+
                 <button type="submit" class="btn start btn-primary mt-3 mb-5" onclick="window.location.href = '/profile'">Update</button>
                 <button type="submit" class="btn start btn-primary mt-3 mb-5" onclick="window.location.href = '/profile'">Return</button>
                 <button type="button" class="delete-post-btn btn col mt-3 mb-5">Delete Event</button>
-            </div>
-        </div>
+
     </form>
 </div>
 
