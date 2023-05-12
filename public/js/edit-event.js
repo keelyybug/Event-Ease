@@ -14,6 +14,7 @@ async function editEventFormHandler(event) {
         'Content-Type': 'application/json',
       },
     });
+    
     console.log(response);
     if (response.ok) {
       // Event successfully edited
