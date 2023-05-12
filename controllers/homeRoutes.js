@@ -2,10 +2,12 @@ const router = require('express').Router();
 const { Event, Rsvp, User } = require('../models');
 const withAuth = require('../utils/auth');
 
+
 // Homepage
 router.get('/', (req, res) => {
   res.render('homepage', { title: 'Homepage' });
 });
+
 
 // Profile Page
 router.get('/profile', withAuth, async (req, res) => {
@@ -32,8 +34,8 @@ router.get('/profile', withAuth, async (req, res) => {
 
 });
 
-//* Get event by ID
 
+//* Get event by ID
 router.get('/event/:id', async (req, res) => {
   try {
     const eventData = await Event.findByPk(req.params.id, {
@@ -66,12 +68,6 @@ router.get('/login', (req, res) => {
 });
 
 
-// Signup Page
-router.get('/signup', (req, res) => {
-  res.render('signup', { title: 'Signup' });
-});
-
-
 // New Event Page
 router.get('/new-event', withAuth, async (req, res) => {
   try {
@@ -82,6 +78,9 @@ router.get('/new-event', withAuth, async (req, res) => {
     });
 
     const user = userData.get({ plain: true });
+    req.session.save(() => {
+      req.session.user_id = userData.id;
+      req.session.loggedIn = true;})
 
     res.render('new-event', {
       ...user,
@@ -91,6 +90,7 @@ router.get('/new-event', withAuth, async (req, res) => {
     res.status(500).json(err);
   }
 });
+
 
 // Single Event Page
 router.get('/single-event/:id', withAuth, async (req, res) => {
@@ -150,7 +150,6 @@ router.get('/edit-event/:id', withAuth, async (req, res) => {
   }
 });
 
-
 router.post('/update/:id', (req, res) => {
   const itemId = req.params.id;
   const updatedItem = req.body;
@@ -158,24 +157,22 @@ router.post('/update/:id', (req, res) => {
   res.redirect('/items');
 });
 
-// Delete individual event
-router.delete('/items/:id', (req, res) => {
-  const itemId = req.params.id;
+router.delete('/edit-event/:id', withAuth, async (req, res) => {
+  try {
+    const eventId = req.params.id;
 
-  res.sendStatus(200);
-});
-
-
-
-// Rsvp Page
-router.get('/rsvp', (req, res) => {
-  res.render('rsvp', { title: 'Rsvp' });
-});
-
-router.post('/rsvp', (req, res) => {
-  const { name, email } = req.body;
-
-  res.sendStatus(200);
+    // Delete the event
+    const deletedEvent = await Event.destroy({
+      where: {
+        id: eventId,
+      },
+    });
+    
+    // Event successfully deleted
+    res.status(200).json({ message: 'Event deleted successfully' });
+  } catch (err) {
+    res.status(500).json(err);
+  }
 });
 
 router.get('/event/:id/rsvp', async (req, res) => {
@@ -204,14 +201,16 @@ router.get('/event/:id/rsvp', async (req, res) => {
 });
 
 
-
 //Dashboard
 router.get('/dashboard', (req, res) => {
   res.render('dashboard', { title: 'Dashboard' });
 });
 
 
-//Event
+// Signup Page
+router.get('/signup', (req, res) => {
+  res.render('signup', { title: 'Signup' });
+});
 
 
 module.exports = router;

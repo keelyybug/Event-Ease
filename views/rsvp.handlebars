@@ -24,7 +24,7 @@
                 </div>
             </nav>
 </header>
-<h1><a class="link" href="/single-event/{{event.id}}">Attendees</a></h1>
+<h1><a class="link text-white text-center" href="/single-event/{{event.id}}">Attendees</a></h1>
 
 <section>
     {{#each event.rsvps}}
@@ -42,6 +42,7 @@
 <div class="modal fade" id="rsvpNew" tabindex="-1" aria-labelledby="rsvpNewLabel" aria-hidden="true">
   <div class="modal-dialog">
     <form class="rsvp-form" id="rsvp-form" data-event="{{event.id}}" data-user="{{event.user_id}}">
+
       <div class="modal-content">
         <div class="modal-header">
           <h1 class="modal-title fs-5" id="rsvpNewLabel">New RSVP</h1>
