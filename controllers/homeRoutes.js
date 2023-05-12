@@ -85,7 +85,7 @@ router.get('/new-event', withAuth, async (req, res) => {
 
     res.render('new-event', {
       ...user,
-      logged_in: true, title: 'New Event'
+      logged_in: req.session.logged_in, title: 'New Event'
     });
   } catch (err) {
     res.status(500).json(err);
@@ -95,18 +95,18 @@ router.get('/new-event', withAuth, async (req, res) => {
 // Single Event Page
 router.get('/single-event/:id', withAuth, async (req, res) => {
   try {
+    const eventId = req.params.id;
     // Find the logged in user based on the session ID
-    const userData = await User.findByPk(req.session.user_id, {
-      attributes: { exclude: ['password'] },
-      include: [{ model: Event }],
+    const eventData = await Event.findByPk(eventId, {
+      attributes: ['id', 'event_title', 'event_description', 'event_date'],
+      include: [{model: User}]
     });
 
-    const user = userData.get({ plain: true });
-
+    const event = eventData.get({ plain: true });
+    console.log(event);
     res.render('single-event', {
-      ...user,
-      logged_in: true, title: 'Single Event'
-    });
+      event,
+      logged_in: req.session.logged_in, title: 'Single-Event' })
   } catch (err) {
     res.status(500).json(err);
   }
@@ -132,15 +132,17 @@ router.get('/dashboard', withAuth, async (req, res) => {
 // Edit Event Page
 router.get('/edit-event/:id', withAuth, async (req, res) => {
   try {
-    const eventData = await Event.findByPk(req.session.user_id,{
-      attributes: { exclude: ['password'] },
-      include: [{ model: User }],
+    const eventId = req.params.id;
+    // Find the logged in user based on the session ID
+    const eventData = await Event.findByPk(eventId, {
+      attributes: ['id', 'event_title', 'event_description', 'event_date'],
+      include: [{model: User, model: Rsvp}]
     });
 
-    const events = eventData.get({ plain: true });
-    console.log(events);
+    const event = eventData.get({ plain: true });
+    console.log(event);
     res.render('edit-event', {
-      ...events,
+      ...event,
       logged_in: true
     });
   } catch (err) {
@@ -148,12 +150,6 @@ router.get('/edit-event/:id', withAuth, async (req, res) => {
   }
 });
 
-// Edit individual event
-// router.get('/edit/:id', (req, res) => {
-//   const itemId = req.params.id;
-
-//   res.render('edit', { item });
-// });
 
 router.post('/update/:id', (req, res) => {
   const itemId = req.params.id;
