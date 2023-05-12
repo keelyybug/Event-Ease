@@ -90,6 +90,10 @@ nav {
     margin-top: -4%;
 }
 
+h1 {
+  font-family: 'Bruno Ace SC', cursive;
+}
+
 .homepgtitle {
     font-family: 'Bruno Ace SC', cursive;
     font-weight: 900;
@@ -101,6 +105,13 @@ nav {
     font-weight: 900;
     font-size: 35px;
 }
+
+.event-title a {
+  font-family: 'Bruno Ace SC', cursive;
+    font-weight: 900;
+    font-size: 35px;
+}
+
 
 .card {
     background-color: #01030856
