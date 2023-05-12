@@ -1,12 +1,13 @@
 const rsvpFormHandler = async (event) => {
   event.preventDefault();
 
-  const name = document.querySelector('#name').value.trim();
-  const message = document.querySelector('#message').value.trim();
+  const message = document.querySelector('#rsvpMessage').value.trim();
 
-  const response = await fetch(`/rsvp`, {
+  if (message) {
+    console.log(message);
+  const response = await fetch(`/api/rsvp`, {
     method: 'POST',
-    body: JSON.stringify({ name, message }),
+    body: JSON.stringify({ message: message }),
     headers: {
       'Content-Type': 'application/json',
     },
@@ -22,7 +23,8 @@ const rsvpFormHandler = async (event) => {
     alert('Failed to submit RSVP');
   }
 }
+}
 
 document
-  .querySelector('.rsvp-form')
+  .querySelector('#rsvpForm')
   .addEventListener('submit', rsvpFormHandler);
