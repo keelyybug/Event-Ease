@@ -17,22 +17,23 @@
                                 <a class="nav-link" href="/profile">Profile</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" id="logout">Log Out</a>
+                                <a class="nav-link" id="logout" href="/">Log Out</a>
                             </li>
                         </ul>
                     </div>
                 </div>
             </nav>
 </header>
-
+{{#if logged_in}}
 <article class="event">
-    <h1>All Event's Dashboard</h1>
+    <h1>All Events Dashboard</h1>
 <div class="container">
     {{#each events as |event| }}
-        {{> event-info event}}
+        {{> dashboard-info event}}
     {{/each}}
 </div>
 </article>
+{{/if}}
 
   <script src="../js/logout.js"></script>
-<script src="../js/dashboard.js"></script>
+
