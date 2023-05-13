@@ -1,4 +1,4 @@
-# Project-2
+ # Event-Ease
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
@@ -11,8 +11,6 @@
 [Usage](#Usage)
 
 [Screenshots](#screenshots)
-
-[Tests](#Tests)
 
 [Technologies-Used](#technologies-used)
 
@@ -56,22 +54,59 @@ Event Deletion: Event organizers have the ability to delete their events, removi
 
 ## Screenshots
 
-## Tests
-
+![Screenshot](public/images/Screenshot%20(119).png)
+![Screenshot](public/images/Screenshot%20(120).png)
+![Screenshot](public/images/Screenshot%20(121).png)
+![Screenshot](public/images/Screenshot%20(122).png)
 ## Technologies Used
 
-MySQL
-Node.js
-Express
-Sequelize
-MVC Architecture
-Heroku
-NPM Packages 
-Bootstrap
+
+* MySQL
+* Node.js
+* Express
+* Sequelize
+* MVC Architecture
+* Heroku
+* NPM Packages 
+* Bootstrap
+* Dotenv
+* Bcrypt.js
+* Faker.js
 
 
 ## Credits
 
+This was a group effort between Keely Sherman, Ashley Girlado, Emily McLean, and Ethan Garrison.
+
 ## License
 
+MIT
+
 ## Questions
+
+Keely Sherman
+<br>
+[Link to Github](https://github.com/keelyybug)
+<br>
+<a href="mailto:egarrisxn@gmail.com">keelysherman00@gmail.com</a>
+<br>
+<br>
+Ashley Giraldo
+<br>
+[Link to Github](https://github.com/Ashleyg5)
+<br>
+<a href="mailto:egarrisxn@gmail.com">ashleygiraldo5@hotmail.com</a>
+<br>
+<br>
+Emily McLean
+<br>
+[Link to Github](https://github.com/emilymclean94)
+<br>
+<a href="mailto:egarrisxn@gmail.com">egarrisxn@gmail.com</a>
+<br>
+<br>
+Ethan Garrison
+<br>
+[Link to Github](https://github.com/egarrisxn)
+<br>
+<a href="mailto:egarrisxn@gmail.com">egarrisxn@gmail.com</a>
