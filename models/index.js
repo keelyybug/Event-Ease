@@ -1,4 +1,4 @@
-const Event = require('./Event');
+const Event = require('./Event.js');
 const Rsvp = require('./Rsvp');
 const User = require('./User');
 
