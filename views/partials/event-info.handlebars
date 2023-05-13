@@ -1,4 +1,4 @@
-<div class="card col-6 card m-5" style="width: 30rem; height: 20rem;">
+<div class="card col-6 card m-5" style="width: 30rem; height: 25rem;">
     <div class="card-body text-center text-white">
         <h4 class="p-0 mb-4 event-title text-center d-flex flex-column"><a class="text-reset"
                 href="/single-event/{{id}}">{{event_title}}</a></h4>
@@ -8,10 +8,10 @@
             <p>{{event_description}}</p>
             <h5>Event Date:</h5>
             <p class="">{{event_date}}</p>
-            <div class="d-inline-flex flex-wrap flex-column align-content-center">
-            <button type="submit" class="text-white btn start p-1 m-1 width-auto"
+            <div class="row">
+            <button type="submit" class="col text-white btn start p-1 m-1 width-auto"
                 onclick="window.location.href = '/event/{{id}}/rsvp'">Respond</button>
-            <button type="submit" class="text-white btn start p-1 m-1"
+            <button type="submit" class="col text-white btn start p-1 m-1 width-auto"
                 onclick="window.location.href = '/single-event/{{id}}'">View</button>
             </div>
     </div>

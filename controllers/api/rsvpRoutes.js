@@ -48,26 +48,26 @@ router.get('/event/:id/rsvp', async (req, res) => {
   }
 });
 
-router.post('/:event_id/:user_id', async (req, res) => {
-  try {
-    let rsvps;
-    const rsvpData = await Rsvp.findAll({
-      where: {event_id: req.params.event_id}
-    });
-    if (rsvpData) {
-      rsvps = rsvpData.map((rsvp) => rsvp.get({ plain: true })); 
-    } else {
-      rsvps = []
-    }
-    console.log(rsvps);
+// router.post('/:event_id/:user_id', async (req, res) => {
+//   try {
+//     let rsvps;
+//     const rsvpData = await Rsvp.findAll({
+//       where: {event_id: req.params.event_id}
+//     });
+//     if (rsvpData) {
+//       rsvps = rsvpData.map((rsvp) => rsvp.get({ plain: true })); 
+//     } else {
+//       rsvps = []
+//     }
+//     console.log(rsvps);
 
-    res.render('rsvp', { 
-      rsvps, 
-    });
-  } catch (err) {
-    res.status(500).json(err);
-  }
-});
+//     res.render('rsvp', { 
+//       rsvps, 
+//     });
+//   } catch (err) {
+//     res.status(500).json(err);
+//   }
+// });
   
   router.post('/:user_id/:event_id', async (req, res) => {
     try {
