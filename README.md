@@ -102,7 +102,7 @@ Emily McLean
 <br>
 [Link to Github](https://github.com/emilymclean94)
 <br>
-<a href="mailto:egarrisxn@gmail.com">egarrisxn@gmail.com</a>
+<a href="mailto:egarrisxn@gmail.com">emilymclean93@gmail.com</a>
 <br>
 <br>
 Ethan Garrison
