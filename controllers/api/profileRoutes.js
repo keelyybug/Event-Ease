@@ -23,6 +23,19 @@ router.post('/event', withAuth, async (req, res) => {
     }
   });
   
-
+  router.put('/edit-event/:id', withAuth, async (req, res) => {
+    try {
+      const eventId = req.params.id;
+      // Find the logged in user based on the session ID
+      const eventData = await Event.update(req.body, {
+        where: {id: eventId}
+      });
+      console.log(eventData);
+      // const event = eventData.get({ plain: true });
+      res.status(200).json(eventData);
+    } catch (err) {
+      res.status(500).json(err);
+    }
+  });
 module.exports = router;
 

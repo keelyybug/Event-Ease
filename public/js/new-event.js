@@ -15,10 +15,6 @@ const newFormHandler = async (event) => {
       },
     });
 
-    req.session.save(() => {
-      req.session.user_id = response.id;
-      req.session.logged_in = true;})
-
     if (response.ok) {
       document.location.replace('/profile');
     } else {
@@ -28,5 +24,5 @@ const newFormHandler = async (event) => {
 };
 
 document
-  .querySelector('#eventform')
-  .addEventListener('submit', newFormHandler);
+  .querySelector('#createbtn')
+  .addEventListener('click', newFormHandler);
