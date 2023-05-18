@@ -1,4 +1,5 @@
- # Event-Ease
+# [Event-Ease](https://event-ease.herokuapp.com/)
+##### Click Event-Ease above for link to application! <br><br>
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
